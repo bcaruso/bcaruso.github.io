@@ -27,6 +27,7 @@ h3 {
 }
 
 a {
+  color: black;
   text-decoration: none;
 }
 
@@ -361,7 +362,6 @@ nav > a{
   margin-bottom: 5em;
 }
 #documentation a{
-
   margin-left: 1em;
 }
 .related_project  {
