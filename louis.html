@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>brandon caruso | portfolio</title>
+  <link rel="stylesheet" href="css/stylesheet.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <section id="left">
+      <h1 class="vertical">brandon caruso</h1>
+    </section>
+    <section id="info">
+      <a href="mailto:brandonjcaruso1@gmail.com">brandonjcaruso1@gmail.com</a>
+      <a href="http://www.linkedin.com/in/brandonjcaruso">linkedin.com/in/brandonjcaruso</a>
+      <p>716.397.7515</p>
+      <nav>
+        <a href = "index.html" class = "selected"> work </a>
+        <div id = "pagenav">
+          <a href="#overview">overview</a>
+          <a href="#inspiration">inspiration</a>
+          <a href="#modeling">modeling</a>
+          <a href="#evaluation">evaluation</a>
+          <a href="#digitalmodel">digital model</a>
+          <a href="#build">build</a>
+        </div>
+        <a href = "about.html"> about </a>
+      </nav>
+    </section>
+  <section id="content">
+    <section id="header">
+      <h1>louis</h1>
+      <p class="subtitle">brallie keyboard prototype</p>
+    </section>
+    <section id="work">
+          <div id = "individual_project">
+            <div id = "overview">
+              <img src="images/louis/louis_2.png">
+              <p class="copy"><b>Current braille chording keyboards</b><sup>1</sup> are <b>expensive</b> and <b>cumbersome</b>, but provide immense functionality. <b>Louis</b> is an initial functional prototype for a <b>Bluetooth LE braille keyboard</b> that is <b>portable</b>, <b>comfortable</b>, and a potentially <b>inexpensive</b> alternative to current keyboards. Louis is and exploration into developing <b>physical form</b> and creating <b>custom electronics</b> to produce a high fidelity prototype.</p>
+              <div id="compare">
+                <div>
+                  <p class="price">$65.00 </p>
+                  <p>Cost of Materials for Louis</p>
+                </div>
+                <hr>
+                <div>
+                  <p class="price">$395.00 </p>
+                  <p>Cost of Current Comparable Braille Notetaker </p>
+                </div>
+              </div>
+              <p class="footnote"><sup>1</sup><b>chording keyboards:</b> A keyboard that uses a set of keys, pressed in combination (a chord), to enter characters or commands.</p>
+            </div>
+            <div id = "inspiration">
+              <h2>inspiration</h2>
+              <img src="images/louis/louis_3.png">
+              <p>Louis took root from a simple <b>Arduino</b> project. This initial <b>implementation prototype</b> sparked a desire to <b>give form to the simple circuitry</b> and to craft a <b>functioning keyboard</b> that can interface with a <b>laptop, tablet, or smartphone</b>. From its simple beginnings to its completed state, Louis is a true exploration of <b>iterative prototyping</b>.</p>
+            </div>
+            <div id = "modeling">
+              <h2>modeling</h2>
+              <div>
+              <img src="images/louis/louis_4.png">
+              <img src="images/louis/louis_5.png">
+              </div>
+              <p>The goal was to create a <b>comfortable</b> keyboard that fit and supported the <b>natural curvature of the hand</b>. The entire device was also designed to <b>fit inside a backpack</b> or medium to large size bag. After some initial <b>sketches</b>, these drawings were translated into <b>clay</b>.</p>
+            </div>
+            <div id = "evaluation">
+              <h2>evaluation</h2>
+              <p>Using the clay model, <b>three individuals</b> were asked to judge the <b>comfort, support, and key placement</b> of the model. <b>All participants</b> thought the form was <b>comfortable</b> and that most of the keys were in a <b>good location and orientation</b>. However, they all suggested <b>moving the spacebar</b> to the front of the form. This <b>early evaluation</b> helped avoid uncovering this issue after creating the higher fidelity version. The <b>clay</b> model allowed for <b>quick iterations</b> and modifications.</p>
+              <img src="images/louis/louis_6.png">
+              <img src="images/louis/louis_7.png">
+              <img src="images/louis/louis_8.png">
+            </div>
+            <div id = "digitalmodel">
+              <h2>digital model</h2>
+              <img src="images/louis/louis_9.png">
+              <p>With the <b>clay model</b> finalized, the form was translated into <b>Rhino 3D</b> to create a <b>digital model</b>. The shape of the <b>keys</b>, the placement of the <b>electronic components</b>, and the <b>mounting</b> for the various keyboard switches were all incorporated into this digital model. Both the <b>schematic and PCB design</b> were completed using <b>Eagle CAD</b>. The digital model was used to create the outline of the PCB.</p>
+            </div>
+            <div id = "build">
+              <h2>build</h2>
+              <p>Using the digital model, the <b>physical form</b> was organized into <b>three prints</b> totaling <b>16 hours</b> of 3D printing. The <b>Other Mill</b> was used to <b>cut out</b> the pin locations, the traces, the mounting holes, and board outline from a <b>PCB</b> blank. After a little cleanup of the copper traces, the <b>Bluefruit microcontroller</b>, Power Switch and <b>Cherry MX keyboard switches</b> were <b>soldered</b> to the board and tested. With the case, keys, and electronic components complete, <b>Louis was ready to be assembled</b>. The <b>software from the orginal</b> Arduino prototype was reused and add the support for <b>BLE communication</b>.</p>
+              <div>
+              <img src="images/louis/louis_10.png">
+              <img src="images/louis/louis_11.png">
+              <img src="images/louis/louis_12.png">
+              </div>
+            </div>
+            <div id = "finalpictures">
+              <img src="images/louis/louis_13.png">
+              <div>
+              <img src="images/louis/louis_14.png">
+              <img src="images/louis/louis_15.png">
+              </div>
+            </div>
+    
+          <iframe src="https://player.vimeo.com/video/208510252/?title=false&portrait=false&byline=false" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+          <div id = "nextstep">
+            <h2>potential next steps</h2>
+            <img src="images/louis/louis_16.png">
+            <p>The main feature <b>lacking</b> in the current design is <b>feedback</b> on past text input. This is normally done by a <b>braille readout</b>. Including this component would <b>increase the price</b> of the device because of the <b>small elements</b> used in the component. <b>Other alternatives</b> should be considered if future iterations are explored to maintain Louis’s <b>low cost goal</b>. The <b>software</b> should also be improved to <b>support special characters</b> that require multiple braille characters to represent and include support for <b>braille characters</b> that represent <b>common words</b> (i.e. for, a, but, in).</p>
+            </div>
+        </div>
+        <div id="documentation">
+          <i class="fa fa-file-pdf-o fa-3x"></i>
+          <a href="pdf/louis_report.pdf">View Process &amp; Reflection Document </a>
+        </div>
+        <h2>you might also like</h2>
+        <div id="related_projects">
+          <div class="related_project">
+            <img src="images/oslo_1.png">
+            <h1> oslo </h1>
+            <p> multi-modal driving companion </p>
+            <a href="">learn more</a>
+          </div>
+          <div class="related_project">
+            <img src="images/flight_1.png">
+            <h1> flight status display </h1>
+            <p> creation of a new cockpit flight display </p>
+            <a href="">learn more</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  </body>
+<footer>
+  <p> &copy;2017 Brandon Caruso </p>
+</footer>
+</html>

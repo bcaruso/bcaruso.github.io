@@ -1,0 +1,409 @@
+body{
+  display:flex;
+  padding: 5vh 5vh 0 5vh;
+  margin: 0;
+  font-family: sans-serif;
+}
+h1,h2,h3,h4,p,a{
+  margin: 0;
+}
+
+p{
+  font-size:.8em;
+}
+
+h1 {
+  font-size: 10vh;
+}
+
+h2 {
+  margin:0;
+  font-weight: 300;
+}
+
+h3 {
+  margin:0;
+  font-size: 24pt;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  font-weight:600;
+}
+
+#left{
+  width: 15vh;
+  height: 95vh;
+  overflow: hidden;
+}
+
+#content{
+  flex: 2 0 0;
+}
+
+#header{
+  height:20vh;
+  text-align: right;
+}
+
+#work{
+  height:75vh;
+  margin-left: 75px;
+  overflow-y: scroll;
+}
+
+.project {
+  display: flex;
+  margin-bottom: 150px;
+}
+
+.project img {
+  width: 50%;
+  object-fit: cover;
+}
+
+.project .project_copy {
+  padding:0;
+  padding-left: 50px;
+}
+
+.project_copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.project_copy .details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 1em;
+}
+
+.project_copy .details section {
+  width: 45%;
+  padding: 0
+}
+.project_copy .details section h4{
+  width:100%;
+  margin-bottom: .5em;
+  border-bottom: .25px solid black;
+  font-size: 1.1em;
+  padding-bottom: .2em;
+}
+
+.project_copy p{
+ line-height: 1.5;
+}
+
+.project_copy a{
+  align-self: flex-end;
+  font-weight: 300;
+  text-decoration: underline;
+}
+
+.project_copy a:hover{
+  align-self: flex-end;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.subtitle{
+  font-weight: 300;
+}
+#info p{
+  line-height: 2em;
+}
+
+#info>a{
+  display: block;
+  font-size:.8em;
+  color: black;
+  line-height: 2em;
+}
+
+#info > a:hover{
+  font-weight: normal;
+  text-decoration: underline;
+}
+
+nav{
+  margin-top: 100px;
+}
+nav a{
+  display:block;
+  line-height: 3em;
+}
+
+nav > a{
+  //text-decoration: underline;
+}
+
+.selected{
+  font-weight: 600;
+  font-size: 1.25em;
+}
+.vertical{
+  display:inline-block;
+  white-space: nowrap;
+  transform-origin: top right;
+  transform: translate(-100%) rotate(-90deg);
+  margin-top: 10px;
+}
+
+#individual_project{
+  display: flex;
+  flex-direction: column;
+}
+
+#individual_project img{
+  width:100%;
+  object-fit: cover;
+}
+
+#individual_project iframe{
+  margin: 3em 0 10em 0;
+  align-self: center;
+}
+
+#pagenav{
+    margin-bottom: 3em;
+}
+
+#pagenav a{
+  font-size: .9em;
+  line-height: 1.75em;
+}
+
+#individual_project > div{
+  margin-bottom: 5em;
+}
+
+#individual_project > div h2{
+  font-weight: 600;
+  font-size: 2.5em;
+  line-height: 3.5em;
+}
+
+#individual_project > div > p{
+  font-size: 1em;
+  line-height: 2em;
+}
+
+#individual_project b{
+  font-size: 1.15em;
+  font-weight: 600;
+}
+#overview {
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+#overview img{
+  width: 100%;
+  height: 20em;
+  margin-bottom: 2em;
+}
+
+#nextstep img{
+
+  margin-bottom: 2em;
+}
+
+#overview .copy {
+  width: 46%;
+}
+
+#compare{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: normal;
+  width: 46%;
+}
+#compare div{
+  width: 100%;
+  align-self: center;
+}
+#compare .price{
+  font-size: 3em;
+  font-weight: 600;
+}
+#compare p{
+  font-size: .75em;
+}
+
+#related_projects {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 2em;
+  margin-bottom: 5vh;
+}
+
+#evaluation p{
+  margin-bottom: 3em;
+}
+
+#evaluation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#evaluation img{
+  width: 33%;
+}
+
+#individual_project h2 {
+  width: 100%;
+}
+
+
+#digitalmodel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#digitalmodel img,#digitalmodel p{
+  width: 48%;
+}
+
+#build {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#build div,#build p{
+  width: 48%;
+}
+
+#build div{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#build div img{
+  height: 15em;
+  margin-bottom: 2em;
+}
+
+#modeling div,#modeling p{
+  width: 48%;
+}
+
+#modeling div{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#modeling{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#modeling div img{
+  height: 15em;
+  margin-bottom: 2em;
+}
+
+#inspiration img{
+  height: 20em;
+  margin-bottom: 2em;
+}
+
+#overview .footnote{
+  font-size: .75em;
+  margin-top: 2em;
+}
+
+
+#finalpictures div,#finalpictures > img{
+  width: 48%;
+}
+
+#finalpictures div{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#finalpictures div img:first-child{
+  margin-bottom: 2em;
+}
+
+#finalpictures{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#documentation{
+
+  margin-bottom: 5em;
+}
+#documentation a{
+
+  margin-left: 1em;
+}
+.related_project  {
+  display: flex;
+  flex-direction: column;
+  margin-right: 25px;
+  line-height: 1.5em;
+  width: 49%;
+}
+
+.related_project img {
+  height: 100px;
+  object-fit: cover;
+}
+
+.related_project h1 {
+  font-size: 1.25em;
+  line-height: 1.5em;
+  margin-top: .5em;
+}
+
+.related_project p {
+  font-weight: 300;
+  font-size: .8em;
+}
+.related_project a {
+  font-weight: 300;
+  font-size: .8em;
+  text-decoration: underline;
+}
+
+hr{
+    width: 10%;
+    margin: 2em 0;
+    border-top: 1px solid #333333;
+}
+
+footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  font-size: .3em;
+  margin:5px;
+  color: #DDDDDD
+}
