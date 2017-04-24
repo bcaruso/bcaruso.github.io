@@ -358,12 +358,12 @@ nav > a{
 }
 
 #documentation{
-
   margin-bottom: 5em;
 }
 #documentation a{
   margin-left: 1em;
 }
+
 .related_project  {
   display: flex;
   flex-direction: column;
