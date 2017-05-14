@@ -1,0 +1,166 @@
+/* interactive wall */
+
+#wall_videos video{
+  width: 60%;
+  margin-top: 4em;
+  margin-bottom: 4em;
+}
+
+#wall_videos video:first-child{
+  margin-top: 0;
+}
+#wall_videos video:last-child{
+  margin-bottom: 0;
+}
+
+#wall_videos video:nth-child(even) {
+  width : 60%;
+  margin-left: 2em;
+}
+
+#wall_videos video:nth-child(odd) {
+  width : 60%;
+  margin-right: 2em;
+}
+
+#wall_videos{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#wall_videos h3{
+  font-size: 2em;
+  margin-bottom: .5em;
+}
+
+#wall_videos div{
+  width : 30%;
+  align-self: center;
+}
+
+#wall_videos div p{
+  line-height: 1.75em;
+  font-size: .8em;
+}
+
+#team_stats{
+  display:flex;
+  flex-direction: row;
+  line-height: normal;
+  width: 100%;
+}
+#team_stats div{
+  width: 100%;
+  display:flex;
+  flex-direction: column;
+}
+#team_stats .number{
+  font-size: 4em;
+  font-weight: 600;
+  line-height: 1em;
+  margin-top: .5em;
+}
+#team_stats .major{
+  font-size: .9em;
+  margin-bottom: 1.75em;
+  font-weight: normal;
+}
+#team_stats p{
+  font-size: 1em;
+  line-height: 1.75em;
+  font-weight: 200;
+}
+
+#overview .callout{
+  font-style: italic;
+  font-weight: 200;
+  font-size: 1.25em;
+  width: 40%;
+  align-self: center;
+  columns:1;
+}
+
+#interface img{
+  width : 60%;
+  margin-top: 4em;
+  margin-bottom: 4em;
+}
+
+#interface img:nth-child(even){
+  margin-right: 2em;
+}
+
+#interface img:nth-child(odd){
+  margin-left: 2em;
+}
+
+#interface{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#interface h3{
+  font-size: 2em;
+  margin-bottom: .5em;
+}
+
+#interface div{
+  width : 30%;
+  align-self: center;
+}
+
+#interface div p{
+  line-height: 1.75em;
+  font-size: .8em;
+}
+
+#research {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#research img {
+  width: 48%;
+}
+
+#research p {
+  width: 45%;
+  align-self:center;
+}
+
+#gestures .column2{
+  columns: 2 !important;
+}
+
+#gestures .width50{
+  width: 50%;
+}
+
+#gestures{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#gestures  img {
+  width: 50%;
+}
+
+#gestures  h3 {
+  width: 100%;
+  margin: 1em 0;
+}
+
+#gesture_image{
+  width: 100% !important;
+  margin: 2em 0;
+}
+
+.width50{
+  width: 50% !important;
+}

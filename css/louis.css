@@ -1,0 +1,157 @@
+#nextstep img{
+  margin-bottom: 2em;
+}
+
+#overview .copy {
+  width: 46%;
+}
+
+#compare{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: normal;
+  width: 46%;
+}
+#compare div{
+  width: 100%;
+  align-self: center;
+}
+#compare .price{
+  font-size: 3em;
+  font-weight: 600;
+}
+#compare p{
+  font-size: .75em;
+}
+
+#evaluation p{
+  margin-bottom: 3em;
+}
+
+#evaluation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#evaluation img{
+  width: 33%;
+}
+
+#digitalmodel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#digitalmodel img,#digitalmodel p{
+  width: 48%;
+}
+
+#build {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#build div{
+  width: 47%;
+}
+
+#build div{
+  align-self: center;
+  margin-bottom: 5em;
+}
+
+#build div p{
+  font-size: .9em;
+  line-height: 2em;
+}
+
+#build div h3{
+  font-size: 1.6em;
+  margin-bottom: 1em;
+}
+
+#build  img{
+  object-fit: cover;
+  width: 50%;
+  height: 15em;
+  margin-bottom: 5em;
+}
+
+#modeling img{
+  width: 48%;
+}
+
+#modeling p{
+  margin-top: 2em;
+  width: 66%;
+}
+
+#modeling div{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#modeling{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#modeling div img{
+  height: 15em;
+  margin-bottom: 2em;
+}
+
+#inspiration img{
+  height: 20em;
+  width: 100%;
+  margin-bottom: 2em;
+  object-fit: cover;
+}
+
+#inspiration p{
+  width: 66%;
+}
+
+#evaluation p{
+  columns: 2;
+
+}
+
+#nextstep p{
+  columns: 2;
+
+}
+
+#overview .footnote{
+  font-size: .75em;
+  margin-top: 2em;
+}
+
+
+#documentation{
+  margin-bottom: 5em;
+}
+#documentation a{
+  margin-left: 1em;
+}
+
+#nextstep{
+  display:flex;
+  flex-direction: column;
+}
+
+#nextstep img{
+  width: 75%;
+  align-self: center;
+}
+
+#related_projects{
+  margin-bottom: 7em;
+}

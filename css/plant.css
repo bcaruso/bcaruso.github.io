@@ -1,0 +1,295 @@
+/* MYSTERY PLANT*/
+#overview .copy{
+  width: 50%;
+}
+#process{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#process h2{
+  width:100%;
+}
+
+#process h3{
+  font-size:1em;
+}
+
+#process img{
+  width:100%;
+  margin-bottom: 2em;
+}
+
+#process div{
+  width : 19%;
+}
+
+#process div h3{
+  margin-bottom: 1em;
+}
+
+#process div p{
+  line-height: 1.5em;
+}
+
+#identify{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+#identify img{
+  width: 50%;
+}
+
+#identify .callout{
+  font-style: italic;
+  font-weight: 200;
+  font-size: 1.25em;
+  width: 40%;
+  align-self: center;
+  columns:1;
+}
+
+#identify p{
+  margin: 2em 0;
+  columns: 2;
+}
+
+#understand img{
+  width : 30%;
+}
+
+#understand p{
+  margin: 2em 0;
+  columns: 2;
+}
+
+#ideate img{
+  width : 24%;
+}
+
+#ideate p{
+  margin-bottom: 2em;
+}
+
+
+#understand{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#understand #opportunity{
+  width : 30%;
+  align-self: center;
+}
+
+#understand #mind{
+  width : 60%;
+  align-self: center;
+}
+
+#ideate .fullwidth{
+  width : 100%;
+}
+
+#concepts{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+#concepts p{
+  width: 100%;
+  margin: 2em 0;
+}
+
+#concepts img{
+  width : 45%;
+}
+
+#concepts div{
+  width : 25%;
+  margin-top: 2em;
+}
+#concepts div h3{
+  font-size: 1em;
+}
+
+#concepts div p{
+  font-size: .8em;
+  line-height: 1.5em;
+}
+#concepts div img{
+  width : 100%;
+  height: 15em;
+}
+
+#concepts .fullwidth{
+  width : 100%;
+}
+
+#concepts #matrix{
+  width : 100%;
+  margin: 2em 0;
+}
+#concepts #matrix h3{
+  font-size: 1.75em;
+}
+#concepts #matrix p{
+  columns: 2;
+  line-height: 2em;
+  font-size: .9em;
+}
+
+#concepts #matrix img{
+  width : 100%;
+  height: 25em;
+  margin: 2em 0;
+}
+
+#refine p{
+  margin-bottom: 2em;
+  width: 66%;
+}
+
+#refine h3{
+  margin-bottom: 1em;
+}
+
+#detailed h3{
+  margin-bottom: 1em;
+}
+
+#refine #storyboard{
+  width: 66%;
+  height: 40em;
+  margin: 2em auto;
+}
+
+#prototype video{
+  width : 33%;
+  margin: 2em;
+}
+
+#prototype p{
+}
+
+#prototype video .width60{
+  width : 60%;
+  margin: 2em;
+}
+
+#prototype #videos{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 4em 0;
+}
+
+#prototype #videos h3{
+  font-size: 2em;
+  margin-bottom: .5em;
+}
+
+#prototype #videos div{
+  width : 50%;
+  align-self: center;
+}
+
+#prototype #videos div p{
+  line-height: 1.75em;
+  font-size: .8em;
+}
+
+#wireframe h3{
+  margin-bottom: 1em;
+}
+#wireframe {
+margin: 3em 0;
+}
+#wireframe img{
+ height: auto;
+}
+
+#wireframe p{
+  line-height: 2em;
+  font-size: .9em;
+  margin-top: 1em;
+}
+
+#wireframe img{
+  margin: 2em 0;
+}
+
+#highfidelity{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 4em 0;
+}
+
+
+
+#highfidelity img{
+  margin: 2em 0;
+}
+
+#highfidelity h3{
+width: 100%;
+margin-bottom: 1em;
+}
+
+#highfidelity #hf_left{
+  width:33%;
+  align-self: center;
+}
+
+#highfidelity #hf_right{
+  width:65%;
+}
+
+.attribute{
+  font-size: .5em !important;
+  color: #696969;
+  margin-top: 1em;
+}
+
+#icon{
+  width: 46%;
+}
+
+#icon img{
+  object-fit: contain;
+}
+
+.img_copy_row{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin: 4em 0;
+}
+
+.img_copy_row > div{
+  width: 40%;
+  line-height: 1.53em;
+  font-size: .9em;
+  align-self: center;
+  margin-right: 5em;
+
+}
+
+.img_copy_row > div > h3{
+  margin-bottom: 1em;
+}
+
+.img_copy_row > div > p{
+  font-size: .9em;
+}
+.img_copy_row > img{
+  width: 60%;
+}
+
+#refine .img_copy_row > div > p{
+width: 100%;}

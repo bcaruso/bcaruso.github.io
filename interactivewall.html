@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>brandon caruso | portfolio</title>
+  <link rel="stylesheet" href="css/base.css" type="text/css">
+  <link rel="stylesheet" href="css/wall.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="scripts/scroll.js"></script>
+</head>
+<body>
+  <section id="left">
+    <h1 class="vertical">brandon caruso</h1>
+  </section>
+  <section id="info">
+    <nav>
+      <a href = "index.html" class = "selected"> work </a>
+      <div id = "pagenav">
+        <a href="#overview">overview</a>
+        <a href="#research">research</a>
+        <!--<a href="#cases">use cases</a>-->
+        <a href="#gestures">gestures</a>
+        <a href="#interface">interface</a>
+        <a href="#prototype">prototype</a>
+      </div>
+      <a href = "about.html"> about </a>
+      <a href = "pdf/resume.pdf"> resume </a>
+    </nav>
+  </section>
+  <section id="content">
+    <section id="work">
+      <div id = "individual_project">
+        <div id = "overview">
+          <section id="header">
+            <h1>interactive wall</h1>
+            <p class="subtitle">prototype for gesture based interactive installation</p>
+          </section>
+          <img src="images/wall/wall_2.png">
+          <p class="width50"> The <b>Interactive Wall</b> was a <b>interdisciplinary team project I led</b> designed for students, faculty, and visitors of the Shineman Science Center at SUNY Oswego. The installation gave passersby the opportunity to <b>step away from the present</b> and explore small experiences which tried to transport them to a <b>new mindset</b>. These included <b>creativity, inspiration, excitement, and relaxation</b>. The user interacts with each experience through the use of a <b>Leap Motion Sensor</b>, allowing them to use their <b>hands without direct touch</b>. This <b>novel interaction</b> was a <b>unique design challenge</b> but the experience created was <b>exciting</b> for many first time users.</p>
+          <p class="callout">Create an application that uses sensors as a form of user input.</p>
+          <p class="attribute">Interface Graphics created by Wei Wang.</p>
+        </div>
+        <div id="research">
+          <h2>research</h2>
+          <img src="images/wall/survey.png">
+          <p>The team set out to identify pieces of <b>artwork, music, and quotes</b> that users of this space might find <b>relaxing or engaging</b>. Though <b>highly subjective</b>, the <b>survey</b> create by the HCI graduate students on the team had <b>63 respondence</b> and some <b>patterns emerged</b>. These patterns were used to generate the <b>four experiences</b> for the installation; <b>Blocks (creativity), Fireworks (excitement), Pond (relaxation), Gallery (inspiration)</b>.</p>
+        </div>
+
+        <div id="gestures">
+          <h2>gestures</h2>
+          <p class = "width50" > <b>In-air gesture</b> recognition was a <b>novel and interesting</b> mode of interaction. These gesture based interactions come with <b>unique challenges</b> that the team had to uncover. Using a <b>Leap Motion Sensor</b>, the installation was able to <b>track the users hands and fingers</b> to manipulate and interact with the installation. The team set out to establish a <b>gesture guide</b> looking to create gestures that were <b>quick to learn and consistent</b>. Select gestures were reserved for cross system use.</p>
+          <img src="images/wall/leap.jpg">
+          <img id="gesture_image" src="images/wall/gestures.svg">
+          <h3>challenges of gesture interfaces</h3>
+          <img src="images/wall/selection.svg">
+          <img src="images/wall/clutch.svg">
+          <p class = "column2">The team had to <b>overcome many challenges</b>, two of the main challenges were dealing with the common problem of <b>false recognition</b> or what some call the <b>live mic problem</b>. In terms of <b>selection</b>, the team decided to use a <b>time-driven</b> approach. When the hand hovered over a "clickable" item a <b>count down</b> would begin <b>before selection was registered</b>. The user would see the hand indicator <b>fill with color</b> and also <b>hear sound feedback</b>. In one of the experiences a <b>clutch</b> was established to help <b>combat the live mic problem</b>. This <b>clutch</b> is a <b>virtual plane</b> that when crossed would start recognition. This has it's own <b>limitations</b>. User's <b>height and distance from the sensor</b> made the <b>location of the plane difficult to establish</b>.</p>
+        </div>
+
+        <div id="interface">
+          <h2>interface</h2>
+          <div>
+          <h3>initial</h3>
+          <p>The initial concept was a collection of wireframes establishing the main selection flow. These were later refined into more finalized wireframes.</p>
+          <p class="attribute">Created by Brandon Caruso.</p>
+          </div>
+          <img src="images/wall/wall_mockups.png">
+          <img src="images/wall/wall_wire.png">
+          <div>
+          <h3>wireframes</h3>
+          <p>Once we had all the experiences laid out and organized, wireframes were create for all the screens in the installation.</p>
+          <p class="attribute">Diagrammed by Wei Wang.</p>
+          </div>
+          <div>
+          <h3>high fidelity</h3>
+          <p>The wireframes were used to generate potential high fidelity mockups. Different visual styles and languages were established based on the survey data. The final selection was based on visual style and feasibility.</p>
+          <p class="attribute">Created by Wei Wang.</p>
+          </div>
+          <img src="images/wall/wall_finalmocks.png">
+        </div>
+
+        <div id="prototype" >
+          <h2>prototype</h2>
+          <div id = "wall_videos">
+            <div>
+              <h3>explore</h3>
+              <p> Hovering hands over the sensor begins the interaction with the wall. Placing the hand over a tile selects the experience.</p>
+              <p class="attribute">Implemented by Brandon Caruso.</p>
+            </div>
+            <video src="video/wall_explore.mp4" autoplay loop></video>
+
+            <video src="video/wall_block.mp4" autoplay loop></video>
+            <div>
+              <h3>blocks</h3>
+              <p>Pointing at blocks picks them up. Opening the hand release the block to build towers.</p>
+              <p class="attribute">Implemented by Brandon Caruso.</p>
+            </div>
+            <div>
+              <h3>fireworks</h3>
+              <p>Poking the sky sets of colorful fireworks over the Oswego lighthouse and the water of Lake Ontario.  </p>
+              <p class="attribute">Implemented by Alexander Meritt and Samantha Bielli.</p><p class="attribute"> Gesture Recognition by Brandon Caruso.</p>
+            </div>
+            <video src="video/wall_firework.mp4" autoplay loop></video>
+
+            <video src="video/wall_gallery.mp4" autoplay loop></video>
+            <div>
+              <h3>gallery</h3>
+              <p>Hovering the hand over the arrows, navigates through the collection of art and quotes. More information about a piece of artwork can be found by hovering over it. </p>
+              <p class="attribute">Implemented by Vinicius Jacques and Chris Prestia.</p>
+            </div>
+
+            <div>
+              <h3>pond</h3>
+              <p> Running fingers through the air translates to a tranquil experience as the fingers invisibly run through the water and leave behind ripples.  </p>
+              <p class="attribute">Implemented by Vinicius Jacques.</p>
+            </div>
+            <video src="video/wall_pond.mp4" autoplay loop></video>
+          </div>
+        </div>
+        <div id="team">
+          <h2>team members</h2>
+          <div id="team_stats">
+            <div>
+              <p class="number"> 4 </p>
+              <p class="major">Undergraduate Software Engineers </p>
+              <p>Brandon Caruso</p> <p>Vinicius Jacques</p> <p>Alexander Meritt</p> <p> Chris Prestia</p>
+            </div>
+            <div>
+              <p class="number"> 3 </p>
+              <p class="major">Graduate HCI Students </p>
+              <p>Wei Wang</p> <p> Andrew Houck</p> <p> Samantha Bielli</p>
+            </div>
+          </div>
+      </div>
+
+
+      <h2>you might also like</h2>
+    <div id="related_projects">
+      <div onclick="window.location='louis.html';" class="related_project">
+      <img src="images/louis/louis_2.png">
+      <h1> louis </h1>
+      <p> brallie keyboard prototype </p>
+      <a href = "louis.html">learn more <i class="fa fa-angle-right"></i></a>
+    </div>
+    <div class="related_project">
+    <img onclick="window.location='mysteryplant.html';" src="images/mystery/mystery_2.jpg">
+    <h1> mystery plant </h1>
+    <p> pervasive mobile game concept </p>
+    <a href = "mysteryplant.html">learn more <i class="fa fa-angle-right"></i></a>
+  </div>
+</div>
+</div>
+</section>
+</section>
+
+</body>
+<footer>
+  <p> &copy;2017 Brandon Caruso </p>
+</footer>
+</html>

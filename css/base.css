@@ -1,0 +1,265 @@
+body{
+  display:flex;
+  margin: 0;
+  font-family: sans-serif;
+}
+h1,h2,h3,h4,p,a{
+  margin: 0;
+}
+::-webkit-scrollbar {display:none;}
+img{
+    max-width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+p{
+  font-size:.8em;
+}
+
+h1 {
+  font-size: 10vh;
+}
+
+h2 {
+  margin:0;
+  font-weight: 300;
+}
+
+h3 {
+  margin:0;
+  font-size: 2em;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:visited {
+  color: black;
+}
+
+#left{
+  display: block;
+  width: 15vh;
+  height: 95vh;
+  margin-left: 5vh;
+  margin-top: 5vh;
+  overflow: hidden;
+}
+
+#content{
+  flex: 2 0 0;
+  flex-direction: column;
+  margin-right: 10vh;
+}
+
+#header{
+  width: 100%;
+  height: 20vh;
+  margin-left: 10vw;
+  margin-top: 5vh;
+  text-align: right;
+}
+
+#full_work{
+  height: 100vh;
+  margin-left: 10vw;
+  overflow-y: scroll;
+}
+
+#work{
+  height: 100vh;
+  margin-left: 10vw;
+  align-self: flex-end;
+  overflow-y: scroll;
+}
+
+#work, #full_work {
+   animation: fadein 2s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.subtitle{
+  font-weight: 300;
+}
+
+#info{
+  width: 7vw;
+  margin-top: 5vh;
+}
+
+#info p{
+  line-height: 2em;
+}
+
+#info > a{
+  display: block;
+  font-size:.8em;
+  color: black;
+  line-height: 2em;
+}
+
+#info > a:hover{
+  font-weight: 600;
+}
+
+nav{
+  //margin-top: 100px;
+}
+nav a{
+  display:block;
+  line-height: 3em;
+}
+
+nav a:hover{
+  font-weight: 600;
+}
+
+.selected{
+  font-weight: 600;
+  font-size: 1.25em;
+}
+
+.inview{
+  font-weight: 600;
+}
+
+.vertical{
+  display:inline-block;
+  white-space: nowrap;
+  transform-origin: top right;
+  transform: translate(-100%) rotate(-90deg);
+  margin-top: 10px;
+}
+
+#pagenav{
+    margin-bottom: 3em;
+}
+
+#pagenav a{
+  font-size: .9em;
+  line-height: 1.75em;
+}
+
+#individual_project{
+  display: flex;
+  flex-direction: column;
+}
+
+#individual_project > div{
+  margin-bottom: 7em;
+}
+
+#individual_project > video{
+  margin-bottom: 7em;
+}
+
+#individual_project > div h2{
+  font-weight: 600;
+  font-size: 2.5em;
+  margin-bottom: 1em;
+  margin-top: 5vh;
+}
+
+#individual_project > div > p{
+  font-size: .9em;
+  line-height: 2em;
+}
+
+#individual_project b{
+  //font-size: 1.15em;
+  font-weight: 600;
+}
+
+#individual_project h2 {
+  width: 100%;
+}
+
+#individual_project video {
+  width: 75%;
+  align-self: center;
+}
+
+#overview {
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#overview img{
+  width: 100%;
+  height: 20em;
+  margin-bottom: 2em;
+  object-fit: cover;
+}
+
+.attribute{
+  font-size: .5em !important;
+  color: #696969;
+  margin-top: 1em;
+}
+
+#related_projects{
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+.related_project  {
+  margin-right: 25px;
+  line-height: 1.5em;
+  width: 100%;
+}
+
+.related_project img {
+  width: 100%;
+  height: 7em;
+  object-fit: cover;
+  margin-top: 2em;
+}
+
+.related_project h1 {
+  font-size: 1.5em;
+  line-height: 1.5em;
+  margin-top: .5em;
+
+}
+
+.related_project:hover {
+  cursor: pointer;
+
+}
+
+.related_project p {
+  font-weight: 300;
+  font-size: .8em;
+}
+.related_project a {
+  font-weight: 300;
+  font-size: .8em;
+}
+
+.related_project a:hover{
+  font-weight: 600;
+}
+
+hr{
+    width: 10%;
+    margin: 2em 0;
+    border-top: 1px solid #333333;
+}
+
+footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  font-size: .3em;
+  margin: 5px;
+  color: #DDDDDD
+}

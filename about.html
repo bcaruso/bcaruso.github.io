@@ -1,36 +1,144 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>brandon caruso | portfolio</title>
-  <link rel="stylesheet" href="css/stylesheet.css" type="text/css">
-  </head>
-  <body>
-    <section id="left">
-      <h1 class="vertical">brandon caruso</h1>
-    </section>
-    <section id="info">
-      <a href="mailto:brandonjcaruso1@gmail.com">brandonjcaruso1@gmail.com</a>
-      <a href="http://www.linkedin.com/in/brandonjcaruso">linkedin.com/in/brandonjcaruso</a>
-      <p>716.397.7515</p>
-      <nav>
-        <a href = "index.html"> work </a>
-        <a href = "about.html" class = "selected"> about </a>
-      </nav>
-    </section>
-  <section id="content">
-    <section id="header">
-    </section>
-    <section id="work">
-        <h1> One singular sensation! </h1>
-        <img style ="margin-top: 2em;"width="33%" src ="images/dapperrobo.png">
-        <img style ="margin-top: 2em;"width="33%" src ="images/dapperrobo.png">
-        <img style ="margin-top: 2em;"width="33%" src ="images/dapperrobo.png">
-    </section>
+<head>
+  <meta charset="UTF-8">
+  <title>brandon caruso | portfolio</title>
+  <link rel="stylesheet" href="css/base.css" type="text/css">
+    <link rel="stylesheet" href="css/about.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="scripts/scroll.js"></script>
+</head>
+<body>
+  <section id="left">
+    <h1 class="vertical">brandon caruso</h1>
   </section>
+  <section id="info">
+    <nav>
+      <a href = "index.html"> work </a>
+      <a href = "about.html" class = "selected"> about </a>
+      <div id = "pagenav">
+        <a href="#like">likes</a>
+        <a href="#experience">work</a>
+        <a href="#learn">studies</a>
+      </div>
+      <a href = "pdf/resume.pdf"> resume </a>
+    </nav>
+  </section>
+  <section id="content">
+    <section id="work">
+      <div id = "me">
+        <div>
+          <h3> i'm an <b>interaction designer</b> and <b>creative technologist</b></h3>
+          <p> I'm interested in exploring the intersection between the digital and physical. I like to make things and collaborate with others to generate new ideas and design artifacts for
+            interaction in the broader context.</p>
+          </div>
+          <img src="images/about/me.jpg">
 
-  </body>
-<footer>
-  <p> &copy;2017 Brandon Caruso </p>
-</footer>
-</html>
+        </div>
+        <div id="contact">
+          <a href="mailto:brandonjcaruso1@gmail.com">
+            <i class="fa fa-envelope-o fa-3x"></i>
+            brandonjcaruso1@gmail.com</a>
+            <a href="http://www.linkedin.com/in/brandonjcaruso">
+              <i class="fa fa-linkedin fa-3x"></i>
+              linkedin.com/in/brandonjcaruso</a>
+            </div>
+            <div id = "like">
+              <h3> i like &hellip; </h3>
+              <div>
+                <img src="images/about/trumpet.jpg">
+                <h3> music </h3>
+                <p>My first love! I'm a trumpet player, I love to sing, and like to play the piano to relax. My favorite music to listen to is music from before I was born! </p>
+              </div>
+              <div>
+                <img src="images/about/family.jpg">
+                <h3> time with family </h3>
+                <p> My family is very important to me. I like spending time with my folks and sister. They are the ones who continue to push me to purse my dreams. </p>
+              </div>
+              <div>
+                <img src="images/about/cartoon_1.png">
+                <h3> making little cartoons </h3>
+                <p>I like making little vector cartoons in Illustrator when I have a free moment.</p>
+              </div>
+              <div>
+                <img src="images/about/train.jpg">
+                <h3> train travel </h3>
+                <p>Traveling by train is something I love to do! It's just me, a coach seat, and some interesting characters for 3-5 days on the rail. I have been across America twice and hope to climb aboard again.</p>
+              </div>
+              <div>
+                <img src="images/about/london.jpg">
+                <h3> globetrotting </h3>
+                <p>I had a short two week experience exploring London and some neighboring sights. This trip definitely wet my appetite for more international travel and I hope to do more soon!</p>
+              </div>
+              <div>
+                <img src="images/about/falls.jpg">
+                <h3>exploring my backyard</h3>
+                <p>Though I don't drive, I love to take bus trips and explore what my backyard has to offer! My weekends take me to the great outdoors, parks, museums, and art galleries.</p>
+              </div>
+            </div>
+            <div id = "experience">
+              <h3> i've worked at &hellip; </h3>
+              <div class = "content_row">
+                <img src="images/about/jpl.svg">
+                <div>
+                  <h3> nasa jet propulsion laboratory </h3>
+                  <p class="subtitle">intern | 6.2015 &ndash; 8.2015 </p>
+                  <p>Spending a summer working above "the center of the universe" established a clear turning point in my career. I was exposed to wonderful people and realized that though I liked being a software engineer, I loved human-centered design. My time in sunny Southern California was an amazing life-changing experience.</p>
+                </div>
+              </div>
+              <img src="images/about/jpl_1.jpg">
+              <img src="images/about/jpl_2.jpg">
+              <img src="images/about/jpl_3.jpg">
+              <img src="images/about/jpl_4.jpg">
+              <div class = "content_row">
+                <img src="images/about/wdw.svg">
+                <div>
+                  <h3> walt disney world </h3>
+                  <p class="subtitle">cast member | 1.2016 &ndash; 8.2016</p>
+                  <p> Waiting for my acceptance into graduate school, I decided to pursue a life long dream. I spent half a year working at Walt Disney World Resort, another once in a life time experience. I interacted with people from around the world, worked for a company I greatly admire, and realized the importance of good service design. </p>
+                </div>
+              </div>
+              <img src="images/about/wdw_1.jpg">
+              <img src="images/about/wdw_2.jpg">
+              <img src="images/about/wdw_3.jpg">
+              <img src="images/about/wdw_4.jpg">
+
+            </div>
+            <div id = "learn">
+              <h3> i've studied at &hellip; </h3>
+              <div id = "school">
+                <div class = "content_row">
+                  <img src="images/mhcid.svg">
+                  <div>
+                    <h3> university of washington &mdash; mhci+d</h3>
+                    <p class="subtitle">master of human-computer interaction and design | 9.2016 &ndash; 8.2017</p>
+                    <p> Going from a small campus town to the big city was a definite change of pace, however, MHCI+D has delivered. It has been a wonderful, but challenging, learning journey with 28 other amazing people.</p>
+                  </div>
+                </div>
+                <div class = "content_row">
+                  <img src="images/oswego.svg">
+                  <div>
+                    <h3> oswego state university </h3>
+                    <p class="subtitle">b.s. software engineering | 9.2013 &ndash; 8.2015</p>
+                    <p> On the snowy and windy shores of Lake Ontario, I studied Software Engineering. I learned from some of the most intelligent and genuinely good humans you will ever meet. </p>
+                  </div>
+                </div>
+                <div class = "content_row">
+                  <img src="images/jcc.svg">
+                  <div>
+                    <h3> jamestown community college </h3>
+                    <p class="subtitle">a.s. individual studies | 9.2012 &ndash; 5.2013</p>
+                    <p> I started off with some humble beginnings. I wanted to explore, while still maintaining my focus on computer science, and JCC was the perfect place to do just that. I wouldn't have wanted to start anywhere else.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+
+      </body>
+      <footer>
+        <p> &copy;2017 Brandon Caruso </p>
+      </footer>
+      </html>

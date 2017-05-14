@@ -1,126 +1,89 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>brandon caruso | portfolio</title>
-  <link rel="stylesheet" href="css/stylesheet.css" type="text/css">
-  </head>
-  <body>
-    <section id="left">
-      <h1 class="vertical">brandon caruso</h1>
-    </section>
-    <section id="info">
-      <a href="mailto:brandonjcaruso1@gmail.com">brandonjcaruso1@gmail.com</a>
-      <a href="http://www.linkedin.com/in/brandonjcaruso">linkedin.com/in/brandonjcaruso</a>
-      <p>716.397.7515</p>
-      <nav>
-        <a href = "index.html" class = "selected"> work </a>
-        <a href = "about.html"> about </a>
-      </nav>
-    </section>
-  <section id="content">
-    <section id="header">
-    </section>
-    <section id="work">
-        <div class = "project">
-          <img src="images/louis/louis_1.png">
-          <div class = "project_copy">
-            <div>
-              <h3>louis</h3>
-              <p class="subtitle">brallie keyboard prototype</p>
-            </div>
-            <p>A one-and-a-half-week prototyping project. Created a functioning high fidelity braille keyboard. Used physical and electronic prototyping tools to evaluate and build an a comfortable, inexpensive, and portable keyboard.</p>
-            <div class="details">
-              <section>
-                <h4>role</h4>
-                <p>This was an individual project. I did everything from design to evaluation to buliding.</p>
-              </section>
-              <section>
-                <h4>tools</h4>
-                <p>Clay Modeling</p>
-                <p>Rhino 3D</p>
-                <p>3D Printer</p>
-                <p>OtherMill</p>
-                <p>Eagle CAD</p>
-              </section>
-            </div>
-            <a href = "louis.html">learn more</a>
-          </div>
-        </div>
-        <div class = "project">
-          <img alt = "Young women thinking about what her mystery plant might be. Phone screen shown on right."src="images/mystery_1.png">
-          <div class = "project_copy">
-            <div>
-              <h3>mystery plant</h3>
-              <p class="subtitle">pervasive mobile game concept</p>
-            </div>
-            <p>An eight-week project. Explored pro-environmental behavior change and how pervasive game elements could promote change. Purposed a hybrid physical and screen based mobile game that exposes users to home gardening and their local gardening community.</p>
-            <div class="details">
-              <section>
-                <h4>role</h4>
-                <p>I was responsible for developing the final interface mockups and established the inital user flow.</p>
-              </section>
-              <section>
-                <h4>tools</h4>
-                <p>Sketch</p>
-                <p>Adobe Illustrator</p>
-                <p>Adobe InDesign</p>
-              </section>
-            </div>
-            <a>learn more</a>
-          </div>
-        </div>
-        <div class = "project">
-          <img alt = "Redesign car dashboard"src="images/oslo_1.png">
-          <div class = "project_copy">
-            <div>
-              <h3>oslo</h3>
-              <p class="subtitle">multi-modal driving companion</p>
-            </div>
-            <p>An two-week team project, exploring a multi-modal car navigation system. Crafted a contextually aware speech interface that worked with thoughtful visual displays to help the driver focus on the driving task.</p>
-            <div class="details">
-              <section>
-                <h4>role</h4>
-                <p>I developed the inital scenario for the video prototype and outlined the language the speech interface would use to communicate with the driver.</p>
-              </section>
-              <section>
-                <h4>tools</h4>
-                <p>Adobe After Effects</p>
-                <p>Adobe Premiere Pro</p>
-                <p>Adobe Illustrator</p>
-              </section>
-            </div>
-            <a>learn more</a>
-          </div>
-        </div>
-        <div class = "project">
-          <img alt = "Vector image of display showing airplane in stall scenario."src="images/flight_1.png">
-          <div class = "project_copy">
-            <div>
-              <h3>flight status display</h3>
-              <p class="subtitle">creation of a new cockpit flight display</p>
-            </div>
-            <p>A four-week project, gaining exposure to designing interfaces for critical settings. Visually communicated the actions a pilot must take to maneuver a plane to maintain safe flying conditions and recover from an emergency.</p>
-            <div class="details">
-              <section>
-                <h4>role</h4>
-                <p>This was an individual project. I did research, visual design, and display animation.</p>
-              </section>
-              <section>
-                <h4>tools</h4>
-                <p>Adobe After Effects</p>
-                <p>Adobe Premiere Pro</p>
-                <p>Adobe Illustrator</p>
-              </section>
-            </div>
-            <a>learn more</a>
-          </div>
-        </div>
-    </section>
+<head>
+  <meta charset="UTF-8">
+  <title>brandon caruso | portfolio</title>
+  <link rel="stylesheet" href="css/base.css" type="text/css">
+  <link rel="stylesheet" href="css/index.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <section id="left">
+    <h1 class="vertical">brandon caruso</h1>
   </section>
+  <section id="info">
+    <nav>
+      <a href = "index.html" class = "selected"> work </a>
+      <a href = "about.html"> about </a>
+      <a href = "pdf/resume.pdf"> resume </a>
+    </nav>
+  </section>
+  <section id="content">
+    <section id="full_work">
+      <div onclick="window.location='louis.html';" class = "project">
+        <img src="images/louis/louis_1.png">
+        <div class = "project_copy">
+          <div>
+            <h3>louis</h3>
+            <p class="subtitle">brallie keyboard prototype</p>
+          </div>
+          <p>A one-and-a-half-week prototyping project. Created a functioning high fidelity braille keyboard. Used physical and electronic prototyping tools to evaluate and build a comfortable, inexpensive, and portable keyboard.</p>
+    <a href = "louis.html">learn more <i class="fa fa-angle-right"></i></a>
+  </div>
+</div>
+</div>
+<div onclick="window.location='mysteryplant.html';" class = "project">
+  <img src="images/mystery/mystery_1.png">
+  <div class = "project_copy">
+    <div>
+      <h3>mystery plant</h3>
+      <p class="subtitle">pervasive mobile game concept</p>
+    </div>
+    <p>An eight-week project. Explored pro-environmental behavior change and how pervasive game elements could promote change. Purposed a hybrid physical and screen based mobile game that exposes users to home gardening and their local gardening community.</p>
+<a href = "mysteryplant.html">learn more <i class="fa fa-angle-right"></i></a>
+</div>
+</div>
+<div onclick="window.location='interactivewall.html';" class = "project">
+  <img alt = "" src="images/wall/wall_1.png">
+  <div class = "project_copy">
+    <div>
+      <h3>interactive wall</h3>
+      <p class="subtitle">prototype for gesture based interactive installation</p>
+    </div>
+    <p>A ten-week team project. Crafted the software for an interactive installation where the user interacts through hand gestures to set off fireworks, play with water, build towers in space, and explore artwork. </p>
+    <a href="interactivewall.html">learn more <i class="fa fa-angle-right"></i></a>
+</div>
+</div>
 
-  </body>
-  <footer>
-    <p> &copy;2017 Brandon Caruso</p>
-  </footer>
+<!--
+<div class = "project">
+<img alt = "Redesign car dashboard"src="images/oslo_1.png">
+<div class = "project_copy">
+<div>
+<h3>oslo</h3>
+<p class="subtitle">multi-modal driving companion</p>
+</div>
+<p>An two-week team project, exploring a multi-modal car navigation system. Crafted a contextually aware speech interface that worked with thoughtful visual displays to help the driver focus on the driving task.</p>
+<a>learn more</a>
+</div>
+</div>
+<div class = "project">
+<img alt = "Vector image of display showing airplane in stall scenario."src="images/flight_1.png">
+<div class = "project_copy">
+<div>
+<h3>flight status display</h3>
+<p class="subtitle">creation of a new cockpit flight display</p>
+</div>
+<p>A four-week project, gaining exposure to designing interfaces for critical settings. Visually communicated the actions a pilot must take to maneuver a plane to maintain safe flying conditions and recover from an emergency.</p>
+<a>learn more</a>
+</div>
+</div>
+-->
+</section>
+</section>
+
+</body>
+<footer>
+  <p> &copy;2017 Brandon Caruso</p>
+</footer>
 </html>

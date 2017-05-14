@@ -1,11 +1,17 @@
 body{
   display:flex;
-  padding: 5vh 5vh 0 5vh;
+  /*padding: 5vh 10vh 0 5vh;*/
   margin: 0;
   font-family: sans-serif;
 }
 h1,h2,h3,h4,p,a{
   margin: 0;
+}
+::-webkit-scrollbar {display:none;}
+img{
+    max-width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 p{
@@ -23,7 +29,7 @@ h2 {
 
 h3 {
   margin:0;
-  font-size: 24pt;
+  font-size: 2em;
 }
 
 a {
@@ -35,51 +41,92 @@ a:visited {
   color: black;
 }
 
-a:hover {
-  font-weight:600;
-}
-
 #left{
+  display: block;
   width: 15vh;
   height: 95vh;
+  margin-left: 5vh;
+  margin-top: 5vh;
   overflow: hidden;
 }
 
 #content{
   flex: 2 0 0;
+  flex-direction: column;
+  margin-right: 10vh;
 }
 
 #header{
-  height:20vh;
+  width: 100%;
+  height: 20vh;
+  margin-left: 10vw;
+  margin-top: 5vh;
   text-align: right;
 }
 
-#work{
-  height:75vh;
-  margin-left: 75px;
+#full_work{
+  height: 100vh;
+  margin-left: 10vw;
   overflow-y: scroll;
+}
+
+#work{
+  height: 100vh;
+  margin-left: 10vw;
+  align-self: flex-end;
+  overflow-y: scroll;
+}
+
+#work, #full_work {
+   animation: fadein 2s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
 
 .project {
   display: flex;
-  margin-bottom: 150px;
+  height: 80vh;
+  min-height: 34em;
+}
+
+.project:hover {
+  cursor: pointer;
+}
+
+.project:last-child{
+  margin-bottom: 20vh;
 }
 
 .project img {
-  width: 50%;
-  object-fit: cover;
+  height: 30em;
+  align-self: flex-end;
 }
 
 .project .project_copy {
   padding:0;
-  padding-left: 50px;
+  margin-left: 50px;
 }
 
 .project_copy {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 0;
+  align-self: flex-end;
+}
+
+#full_work .project_copy div h3{
+  font-size: 2.5em;
+}
+
+.project_copy div{
+  margin-bottom: 2em;
+}
+
+.project_copy a{
+  margin-top: 1em;
+  font-weight: 200;
 }
 
 .project_copy .details {
@@ -93,8 +140,9 @@ a:hover {
   width: 45%;
   padding: 0
 }
+
 .project_copy .details section h4{
-  width:100%;
+  width: 100%;
   margin-bottom: .5em;
   border-bottom: .25px solid black;
   font-size: 1.1em;
@@ -102,29 +150,33 @@ a:hover {
 }
 
 .project_copy p{
- line-height: 1.5;
+ line-height: 1.75em;
 }
 
 .project_copy a{
-  align-self: flex-end;
-  font-weight: 300;
-  text-decoration: underline;
+  font-size: .85em;
+  align-self: flex-start;
 }
 
 .project_copy a:hover{
-  align-self: flex-end;
+  align-self: flex-start;
   font-weight: 600;
-  text-decoration: underline;
 }
 
 .subtitle{
   font-weight: 300;
 }
+
+#info{
+  width: 7vw;
+  margin-top: 5vh;
+}
+
 #info p{
   line-height: 2em;
 }
 
-#info>a{
+#info > a{
   display: block;
   font-size:.8em;
   color: black;
@@ -132,47 +184,36 @@ a:hover {
 }
 
 #info > a:hover{
-  font-weight: normal;
-  text-decoration: underline;
+  font-weight: 600;
 }
 
 nav{
-  margin-top: 100px;
+  //margin-top: 100px;
 }
 nav a{
   display:block;
   line-height: 3em;
 }
 
-nav > a{
-  //text-decoration: underline;
+nav a:hover{
+  font-weight: 600;
 }
 
 .selected{
   font-weight: 600;
   font-size: 1.25em;
 }
+
+.inview{
+  font-weight: 600;
+}
+
 .vertical{
   display:inline-block;
   white-space: nowrap;
   transform-origin: top right;
   transform: translate(-100%) rotate(-90deg);
   margin-top: 10px;
-}
-
-#individual_project{
-  display: flex;
-  flex-direction: column;
-}
-
-#individual_project img{
-  width:100%;
-  object-fit: cover;
-}
-
-#individual_project iframe{
-  margin: 3em 0 10em 0;
-  align-self: center;
 }
 
 #pagenav{
@@ -184,31 +225,52 @@ nav > a{
   line-height: 1.75em;
 }
 
+#individual_project{
+  display: flex;
+  flex-direction: column;
+}
+
 #individual_project > div{
-  margin-bottom: 5em;
+  margin-bottom: 7em;
+}
+
+#individual_project > video{
+  margin-bottom: 7em;
 }
 
 #individual_project > div h2{
   font-weight: 600;
   font-size: 2.5em;
-  line-height: 3.5em;
+  margin-bottom: 1em;
+  margin-top: 5vh;
 }
 
 #individual_project > div > p{
-  font-size: 1em;
+  font-size: .9em;
   line-height: 2em;
 }
 
 #individual_project b{
-  font-size: 1.15em;
+  //font-size: 1.15em;
   font-weight: 600;
 }
+
+#individual_project h2 {
+  width: 100%;
+}
+
+#individual_project video {
+  width: 75%;
+  align-self: center;
+}
+
 #overview {
   display:flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
 #overview img{
   width: 100%;
   height: 20em;
@@ -216,7 +278,6 @@ nav > a{
 }
 
 #nextstep img{
-
   margin-bottom: 2em;
 }
 
@@ -265,11 +326,6 @@ nav > a{
   width: 33%;
 }
 
-#individual_project h2 {
-  width: 100%;
-}
-
-
 #digitalmodel {
   display: flex;
   flex-wrap: wrap;
@@ -286,24 +342,36 @@ nav > a{
   justify-content: space-between;
 }
 
-#build div,#build p{
-  width: 48%;
+#build img,#build div{
+  width: 47%;
 }
 
 #build div{
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: space-between;
+  align-self: center;
+  margin-bottom: 5em;
 }
 
-#build div img{
+#build div p{
+  font-size: .9em;
+  line-height: 2em;
+}
+
+#build div h3{
+  font-size: 1.6em;
+  margin-bottom: 1em;
+}
+
+#build  img{
   height: 15em;
-  margin-bottom: 2em;
+  margin-bottom: 5em;
 }
 
-#modeling div,#modeling p{
+#modeling img{
   width: 48%;
+}
+
+#modeling p{
+  margin-top: 2em;
 }
 
 #modeling div{
@@ -329,33 +397,30 @@ nav > a{
   margin-bottom: 2em;
 }
 
+#inspiration p{
+  columns: 2;
+}
+
+#modeling p{
+  columns: 2;
+
+}
+
+#evaluation p{
+  columns: 2;
+
+}
+
+#nextstep p{
+  columns: 2;
+
+}
+
 #overview .footnote{
   font-size: .75em;
   margin-top: 2em;
 }
 
-
-#finalpictures div,#finalpictures > img{
-  width: 48%;
-}
-
-#finalpictures div{
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-#finalpictures div img:first-child{
-  margin-bottom: 2em;
-}
-
-#finalpictures{
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-between;
-}
 
 #documentation{
   margin-bottom: 5em;
@@ -364,6 +429,15 @@ nav > a{
   margin-left: 1em;
 }
 
+#nextstep{
+  display:flex;
+  flex-direction: column;
+}
+
+#nextstep img{
+  width: 75%;
+  align-self: center;
+}
 .related_project  {
   display: flex;
   flex-direction: column;
@@ -404,6 +478,160 @@ footer{
   bottom: 0;
   left: 0;
   font-size: .3em;
-  margin:5px;
+  margin: 5px;
   color: #DDDDDD
+}
+
+#me {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10vh;
+}
+
+#me h3{
+  line-height: 1.1em;
+}
+
+#me img{
+  width: 40%;
+  align-self: center;
+}
+
+#me div{
+  width: 50%;
+  align-self: center;
+  line-height: 1.5em;
+  font-size: 1.1em
+}
+
+#me div h3{
+  font-size: 3em;
+  margin-bottom: 1em;
+}
+
+
+#like {
+  margin-bottom: 5em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#like  h3{
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+#like > h3{
+  margin-top: 10vh;
+}
+
+#like div{
+  width: 25%;
+  margin: 1em;
+}
+
+#like div img{
+  width: 100%;
+  height: auto;
+}
+
+#like div img{
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+#like div h3{
+  font-size: 1.25em;
+}
+
+#like div p{
+  margin-bottom: 2em;
+  font-size: .8em;
+  line-height: 1.75em;
+}
+
+
+#experience {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 8em;
+
+}
+
+#experience img{
+  width: 24%;
+}
+
+#experience h3{
+  margin-top: 10vh;
+}
+
+#learn > h3{
+  padding-top: 10vh;
+}
+
+#school {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.content_row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  margin: 3em;
+}
+#experience .content_row{
+  margin-top: 8em;
+}
+#experience .content_row:first-of-type {
+  margin-top: 3em;
+}
+
+.content_row  img{
+  width: 25%;
+  align-self: center;
+}
+
+.content_row div{
+  width: 50%;
+  align-self: center;
+  line-height: 1.25em;
+}
+
+.content_row div h3{
+  font-size: 1.25em;
+}
+
+.content_row .subtitle{
+  margin-top: .25em;
+  margin-bottom: 1em;
+}
+
+#contact p{
+
+  font-size: 1em;
+  margin-top: 1em;
+  margin-bottom:2em;
+}
+
+#contact a{
+  display: block;
+  margin-top: 5em;
+  margin-bottom: 3em;
+}
+
+#contact i{
+  margin-right: .5em;
+}
+
+#contact {
+  display:flex;
+  justify-content: space-around;
 }

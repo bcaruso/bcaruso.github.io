@@ -1,0 +1,80 @@
+.project {
+  display: flex;
+  height: 80vh;
+  min-height: 34em;
+}
+
+.project:hover {
+  cursor: pointer;
+}
+
+.project:last-child{
+  margin-bottom: 20vh;
+}
+
+.project img {
+  height: 30em;
+  align-self: flex-end;
+}
+
+.project .project_copy {
+  padding:0;
+  margin-left: 50px;
+}
+
+.project_copy {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+}
+
+#full_work .project_copy div h3{
+  font-size: 2.5em;
+}
+
+.project_copy div{
+  margin-bottom: 2em;
+}
+
+.project_copy a{
+  margin-top: 1em;
+  font-weight: 200;
+}
+
+.project_copy .details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 1em;
+}
+
+.project_copy .details section {
+  width: 45%;
+  padding: 0
+}
+
+.project_copy .details section h4{
+  width: 100%;
+  margin-bottom: .5em;
+  border-bottom: .25px solid black;
+  font-size: 1.1em;
+  padding-bottom: .2em;
+}
+
+.project_copy p{
+ line-height: 1.75em;
+}
+
+.project_copy a{
+  font-size: .85em;
+  align-self: flex-start;
+}
+
+.project_copy a:hover{
+  align-self: flex-start;
+  font-weight: 600;
+}
+
+.subtitle{
+  font-weight: 300;
+}
