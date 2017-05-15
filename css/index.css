@@ -78,3 +78,10 @@
 .subtitle{
   font-weight: 300;
 }
+
+canvas{
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left:0;
+}
