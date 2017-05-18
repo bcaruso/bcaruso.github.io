@@ -49,6 +49,10 @@ a:visited {
   overflow: hidden;
 }
 
+#left:hover{
+  cursor: pointer;
+}
+
 #content{
   flex: 2 0 0;
   flex-direction: column;
