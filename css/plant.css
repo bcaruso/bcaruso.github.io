@@ -2,6 +2,35 @@
 #overview .copy{
   width: 50%;
 }
+
+#overview .callout{
+  font-style: italic;
+  font-weight: 200;
+  font-size: 1.25em;
+  margin-bottom: 2em;
+  width: 100%;
+  align-self: center;
+  text-align: center;
+}
+
+#poplogo{
+  text-align: center;
+  margin-top: 2em;
+}
+
+#poplogo p {
+  vertical-align: middle;
+}
+
+#overview #poplogo img{
+  width : 20%;
+  height: auto;
+  object-fit: contain;
+  text-align: center;
+  vertical-align: middle;
+  margin-bottom: 0;
+  margin-right: 2em;
+}
 #process{
   display:flex;
   flex-wrap: wrap;
@@ -100,9 +129,9 @@
   justify-content: space-around;
 }
 
-#concepts p{
+#concepts > p{
   width: 100%;
-  margin: 2em 0;
+  margin-top: 3em ;
 }
 
 #concepts img{
@@ -111,10 +140,11 @@
 
 #concepts div{
   width : 25%;
-  margin-top: 2em;
+  margin: 5em 0;
 }
 #concepts div h3{
   font-size: 1em;
+  margin-bottom: 1em;
 }
 
 #concepts div p{
@@ -151,7 +181,6 @@
 
 #refine p{
   margin-bottom: 2em;
-  width: 66%;
 }
 
 #refine h3{
@@ -168,9 +197,14 @@
   margin: 2em auto;
 }
 
+#userflow{
+  margin-top: 10em;
+}
+
 #prototype video{
   width : 33%;
   margin: 2em;
+  border: .25px solid rgba(0, 0, 0, 0.20);
 }
 
 #prototype p{

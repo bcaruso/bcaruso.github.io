@@ -10,6 +10,9 @@
   <script src="scripts/scroll.js"></script>
 </head>
 <body>
+  <section onclick="window.location='index.html';" id="top">
+    <h1>brandon caruso</h1>
+  </section>
   <section onclick="window.location='index.html';" id="left">
     <h1 class="vertical">brandon caruso</h1>
   </section>
@@ -26,7 +29,7 @@
         <a href="#nextstep">next steps</a>
       </div>
       <a href = "about.html"> about </a>
-      <a href = "pdf/resume.pdf"> resume </a>
+      <a href = "pdf/caruso_resume.pdf"> resume </a>
     </nav>
   </section>
   <section id="content">
@@ -35,10 +38,11 @@
         <div id = "overview">
           <section id="header">
             <h1>louis</h1>
-            <p class="subtitle">brallie keyboard prototype</p>
+            <p class="subtitle">braille keyboard prototype</p>
           </section>
           <img src="images/louis/louis_2.jpg">
-          <p class="copy"><b>Current braille chording keyboards</b><sup>1</sup> are <b>expensive</b> and <b>cumbersome</b>, but provide immense functionality. <b>Louis</b> is an initial functional prototype for a <b>Bluetooth LE braille keyboard</b> that is <b>portable</b>, <b>comfortable</b>, and a potentially <b>inexpensive</b> alternative to current keyboards. Louis is an exploration into developing <b>physical form</b> and creating <b>custom electronics</b> to produce a high fidelity prototype.</p>
+          <p class = "callout"> Louis, a 1 &frac12; week individual project focused on electronic &amp; physical prototyping.</p>
+          <p class="copy">Current braille chording keyboards<sup>1</sup> are expensive and cumbersome, but provide immense functionality. Louis is an initial functional prototype for a Bluetooth LE braille keyboard that is portable, comfortable, and a potentially inexpensive alternative to current keyboards. Louis is an exploration into developing physical form and creating custom electronics to produce a high fidelity prototype.</p>
           <div id="compare">
             <div>
               <p class="price">$65.00 </p>
@@ -50,84 +54,107 @@
               <p>Cost of Current Comparable Braille Notetaker </p>
             </div>
           </div>
-          <p class="footnote"><sup>1</sup><b>chording keyboards:</b> A keyboard that uses a set of keys, pressed in combination (a chord), to enter characters or commands.</p>
+          <p class="footnote"><sup>1</sup>chording keyboards: A keyboard that uses a set of keys, pressed in combination (a chord), to enter characters or commands.</p>
+          <div id="team_tools">
+            <div id="tools">
+              <h2>tools</h2> <p>Clay &emsp;&middot;&emsp; Rhino 3D &emsp;&middot;&emsp;  3D Printer  &emsp;&middot;&emsp;  Eagle CAD  &emsp;&middot;&emsp;  Other Mill CNC   &emsp;&middot;&emsp;  Soldering Tools  &emsp;&middot;&emsp;  Arduino IDE</p>
+            </div>
+          </div>
         </div>
+
         <video src="video/louis_keymap.mp4" autoplay loop></video>
+
+        <hr>
+
         <div id = "inspiration">
           <h2>inspiration</h2>
           <img src="images/louis/louis_3.jpg">
-          <p>Louis took root from a simple <b>Arduino</b> project. This initial <b>implementation prototype</b> sparked the desire to <b>give form to the simple circuitry</b> and to craft a <b>functioning keyboard</b> that can interface with a <b>laptop, tablet, or smartphone</b>. From its simple beginnings to its completed state, Louis is a true exploration of <b>iterative prototyping</b>.</p>
+          <p>Louis took root from a simple Arduino project. This initial implementation prototype sparked the desire to give form to the simple circuitry and to craft a functioning keyboard that can interface with a laptop, tablet, or smartphone. From its simple beginnings to its completed state, Louis is a true exploration of iterative prototyping.</p>
         </div>
+
+        <hr>
+
+
         <div id = "modeling">
           <h2>modeling</h2>
           <img src="images/louis/louis_4.jpg">
           <img src="images/louis/louis_5.jpg">
-          <p>The goal was to create a <b>comfortable</b> keyboard that fit and supported the <b>natural curvature of the hand</b>. The entire device was also designed to <b>fit inside a backpack</b> or medium to large size bag. After some initial <b>sketches</b>, these drawings were translated into <b>clay</b>.</p>
+          <p>The goal was to create a comfortable keyboard that fit and supported the natural curvature of the hand. The entire device was also designed to fit inside a backpack or medium to large size bag. After some initial sketches, these drawings were translated into clay.</p>
         </div>
+
+        <hr>
+
         <div id = "evaluation">
           <h2>evaluation</h2>
-          <p>Using the clay model, <b>three individuals</b> were asked to judge the <b>comfort, support, and key placement</b> of the model. <b>All participants</b> thought the form was <b>comfortable</b> and that most of the keys were in a <b>good location and orientation</b>. However, they all suggested <b>moving the spacebar</b> to the front of the form. This <b>early evaluation</b> helped avoid uncovering this issue after creating the higher fidelity version. The <b>clay</b> model allowed for <b>quick iterations</b> and modifications.</p>
+          <p>Using the clay model, three individuals were asked to judge the comfort, support, and key placement of the model. All participants thought the form was comfortable and that most of the keys were in a good location and orientation. However, they all suggested moving the spacebar to the front of the form. This early evaluation helped avoid uncovering this issue after creating the higher fidelity version. The clay model allowed for quick iterations and modifications.</p>
           <img src="images/louis/louis_6.jpg">
           <img src="images/louis/louis_7.jpg">
           <img src="images/louis/louis_8.jpg">
         </div>
+
+        <hr>
+
         <div id = "digitalmodel">
           <h2>digital model</h2>
           <img src="images/louis/louis_9.jpg">
-          <p>With the <b>clay model</b> finalized, the form was translated into <b>Rhino 3D</b> to create a <b>digital model</b>. The shape of the <b>keys</b>, the placement of the <b>electronic components</b>, and the <b>mounting</b> for the various keyboard switches were all incorporated into this digital model. Both the <b>schematic and PCB design</b> were completed using <b>Eagle CAD</b>. The digital model was used to create the outline of the PCB.</p>
+          <p>With the clay model finalized, the form was translated into Rhino 3D to create a digital model. The shape of the keys, the placement of the electronic components, and the mounting for the various keyboard switches were all incorporated into this digital model. Both the schematic and PCB design were completed using Eagle CAD. The digital model was used to create the outline of the PCB.</p>
         </div>
+
+        <hr>
+
         <div id = "build">
           <h2>build</h2>
           <div>
             <h3>print</h3>
-            <p>Using the digital model, the <b>physical form</b> was organized into <b>three prints</b> totaling <b>16 hours</b> of 3D printing.</p>
+            <p>Using the digital model, the physical form was organized into three prints totaling 16 hours of 3D printing.</p>
           </div>
           <img src="images/louis/louis_10.jpg">
           <div>
             <h3>mill</h3>
-            <p>The <b>Other Mill</b> was used to <b>cut out</b> the pin locations, the traces, the mounting holes, and board outline from a <b>PCB</b> (printed circuit board) blank. </p>
+            <p>The Other Mill was used to cut out the pin locations, the traces, the mounting holes, and board outline from a PCB (printed circuit board) blank. </p>
           </div>
           <img src="images/louis/louis_11.jpg">
           <div>
             <h3>solder</h3>
-            <p>After a little cleanup of the copper traces, the <b>Bluefruit micro-controller</b>, Power Switch and <b>Cherry MX keyboard switches</b> were <b>soldered</b> to the board and tested.</p>
+            <p>After a little cleanup of the copper traces, the Bluefruit micro-controller, Power Switch and Cherry MX keyboard switches were soldered to the board and tested.</p>
           </div>
           <img src="images/louis/louis_12.jpg">
           <div>
             <h3>assemble and program</h3>
-            <p>With the case, keys, and electronic components complete, <b>Louis was ready to be assembled</b>. The <b>software from the original</b> Arduino prototype was reused and add the support for <b>BLE communication</b>.</p>
+            <p>With the case, keys, and electronic components complete, Louis was ready to be assembled. The software from the original Arduino prototype was reused and the support for BLE communication was added.</p>
           </div>
           <img src="images/louis/louis_13.jpg">
         </div>
         <video src="video/louis_type.mp4" autoplay loop></video>
+        <hr>
         <div id = "nextstep">
           <h2>potential next steps</h2>
           <img src="images/louis/louis_16.jpg">
-          <p>The main feature <b>lacking</b> in the current design is <b>feedback</b> on past text input. This is normally done by a <b>braille readout</b>. Including this component would <b>increase the price</b> of the device because of the <b>small elements</b> used in the component. <b>Other alternatives</b> should be considered if future iterations are explored to maintain Louis’s <b>low cost goal</b>. The <b>software</b> should also be improved to <b>support special characters</b> that require multiple braille characters to represent and include support for <b>braille characters</b> that represent <b>common words</b> (i.e. for, but, in).</p>
+          <p>The main feature lacking in the current design is feedback on past text input. This is normally done by a braille readout. Including this component would increase the price of the device because of the small elements used in the component. Other alternatives should be considered if future iterations are explored to maintain Louis’s low cost goal. The software should also be improved to support special characters that require multiple braille characters to represent and include support for braille characters that represent common words (i.e. for, but, in). Another future goal is to make Louis open source.</p>
         </div>
       </div>
       <div id="documentation">
         <i class="fa fa-file-pdf-o fa-3x"></i>
         <a href="pdf/louis_report.pdf">View Process &amp; Reflection Document </a>
       </div>
-
+      <hr>
       <h2>you might also like</h2>
-    <div id = "related_projects">
-    <div onclick="window.location='mysteryplant.html';" class="related_project">
-    <img src="images/mystery/mystery_2.jpg">
-    <h1> mystery plant </h1>
-    <p> pervasive mobile game concept </p>
-    <a href = "mysteryplant.html">learn more <i class="fa fa-angle-right"></i></a>
-  </div>
-    <div onclick="window.location='interactivewall.html';" class="related_project">
-    <img  src="images/wall/wall_2.jpg">
-    <h1> interactive wall </h1>
-    <p> gesture based interactive installation </p>
-    <a href = "interactivewall.html">learn more <i class="fa fa-angle-right"></i></a>
-  </div>
-</div>
-</div>
-</section>
+      <div id = "related_projects">
+        <div onclick="window.location='mysteryplant.html';" class="related_project">
+          <img src="images/mystery/mystery_2.jpg">
+          <h1> mystery plant </h1>
+          <p> pervasive mobile game concept </p>
+          <a href = "mysteryplant.html">learn more <i class="fa fa-angle-right"></i></a>
+        </div>
+        <div onclick="window.location='interactivewall.html';" class="related_project">
+          <img  src="images/wall/wall_2.jpg">
+          <h1> interactive wall </h1>
+          <p> gesture based interactive installation </p>
+          <a href = "interactivewall.html">learn more <i class="fa fa-angle-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
 </section>
 
 </body>

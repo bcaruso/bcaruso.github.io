@@ -1,7 +1,8 @@
 .project {
   display: flex;
-  height: 80vh;
-  min-height: 34em;
+  height: auto;
+  max-height: 68vh;
+  margin: 15vh 0;
 }
 
 .project:hover {
@@ -13,13 +14,19 @@
 }
 
 .project img {
-  height: 30em;
+  width: 55%;
+  height: auto;
+  min-height: 350px;
+  max-height: 68vh;
+  flex-shrink: 350px;
   align-self: flex-end;
+  object-fit: cover;
 }
 
 .project .project_copy {
   padding:0;
   margin-left: 50px;
+  min-width: 15em;
 }
 
 .project_copy {
@@ -84,4 +91,34 @@ canvas{
   position: absolute;
   top: 0;
   left:0;
+}
+
+
+@media only screen and (max-width: 1120px) {
+
+    .project {
+      height: auto;
+      max-height: 68vh;
+      margin: 10vh 0;
+      }
+}
+
+@media only screen and (max-width: 850px) {
+
+    .project {
+      flex-direction: column;
+    }
+    
+    .project img{
+      all: initial;
+      width: 100%;
+      height: 30vh;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .project_copy{
+      width: 100%;
+      margin: 2em 0;
+    }
 }
