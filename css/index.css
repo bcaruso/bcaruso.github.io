@@ -18,9 +18,16 @@
   height: auto;
   min-height: 350px;
   max-height: 68vh;
-  flex-shrink: 350px;
   align-self: flex-end;
   object-fit: cover;
+}
+
+.current_project{
+  margin-top: 4em;
+}
+
+.current_project:hover{
+  cursor: default;
 }
 
 .project .project_copy {
@@ -108,7 +115,7 @@ canvas{
     .project {
       flex-direction: column;
     }
-    
+
     .project img{
       all: initial;
       width: 100%;
