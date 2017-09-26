@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>brandon caruso | portfolio</title>
+  <link rel="stylesheet" href="css/base.css" type="text/css">
+  <link rel="stylesheet" href="css/buddyblocks.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="scripts/scroll.js"></script>
+</head>
+<body>
+  <section onclick="window.location='index.html';" id="top">
+    <h1>brandon caruso</h1>
+  </section>
+  <section onclick="window.location='index.html';" id="left">
+    <h1 class="vertical">brandon caruso</h1>
+  </section>
+  <section id="info">
+    <nav>
+      <a href = "index.html" class = "selected"> work </a>
+      <div id = "pagenav">
+        <a href="#overview">overview</a>
+        <a href="#research">research</a>
+        <a href="#ideation">ideation</a>
+        <a href="#prototype">prototyping</a>
+        <a href="#evaluation">evaluation</a>
+      </div>
+      <a href = "about.html"> about </a>
+      <a href = "pdf/caruso_resume.pdf"> resume </a>
+    </nav>
+  </section>
+  <section id="content">
+    <section id="work">
+      <div id = "individual_project">
+        <div id = "overview">
+          <section id="header">
+            <h1>buddy blocks</h1>
+            <p class="subtitle">graduate capstone &mdash; physical-digital creative and social platform</p>
+          </section>
+          <img src="images/buddyblocks/buddyblockbanner.jpg">
+          <p class = "callout"> Empowering pediatric dialysis patients to build relationships through creativity.</p>
+          <p class = "copy">Pediatric hemodialysis patients at Seattle Children’s Hospital must spend three to five hours, three to five times a week at the dialysis unit to compensate for their lost kidney function. When receiving dialysis treatment, patients must remain seated for the whole treatment while being physically connected to a dialysis machine. This environment limits the activities a patient can do and the interactions that can take place between patients while receiving treatment. Buddy Blocks looks to bridge these barriers between patients during treatment to empower patients to build relationships and explore new creative possibilities.</p>
+          <div id="compare">
+            <div>
+              <p class="price">12 &ndash; 16 </p>
+              <p>Hours/Week Receiving Treatment </p>
+            </div>
+            <hr>
+            <div>
+              <p class="price">0 &ndash; 20 </p>
+              <p>Patient Age Range </p>
+            </div>
+          </div>
+
+          <p id ="childrenslogo" ><img src = "images/buddyblocks/sclogo.svg"> Sponsored by Dr. Ari Pollack of Seattle Children's.</p>
+
+        </div>
+        <div id= "overview_content">
+          <div id="fourblocks">
+            <img src="images/buddyblocks/fourblocks.svg">
+            <p>Buddy Blocks is comprised of two main components; a set of 27 physical blocks and an iPad application. Each set of blocks is contains 20 light blocks, 4 display blocks, 2 sound block, and 1 camera block.</p>
+          </div>
+          <div id="flow">
+            <img src="images/buddyblocks/create.jpg">
+            <div>
+              <h2>create</h2>
+              <p>Patients use the blocks to capture media connecting the blocks through magnets to form exciting creations.</p>
+            </div>
+            <img src="images/buddyblocks/share.jpg">
+
+            <div>
+              <h2>share</h2>
+              <p>Patients can send creations to others or share with the entire unit by posting to the gallery through the companion iPad application.</p>
+            </div>
+            <video id="build" src="video/build.m4v" autoplay></video>
+
+            <div>
+              <h2>build</h2>
+              <p>Once a patient receives a creation, they must reassembled the creation using their own blocks before the color and media is revealed. The application helps them build the creation by showing live step-by-step instructions.</p>
+            </div>
+          </div>
+          <div id = "tui">
+            <h2>interacting with the blocks</h2>
+            <p> The ability to physically change the characteristics of the blocks enhances the experience and unlocks creative possibilities. Actions can be performed on the blocks through a distinct set of interactions. These interactions are consistent across all blocks regardless of their type. This allows for quick adoption by the patients and provides an established model for the patient to understand how to interact with the blocks.</p>
+
+            <div class="third">
+              <video src="video/press.m4v" autoplay loop></video>
+              <div>
+                <h3>press</h3>
+                <p>Pressing or squeezing any face is reserved for any discrete change or action to the block. This can be used to take a picture or color and start or stop sound and video. </p>
+              </div>
+            </div>
+
+            <div class="third">
+              <video id="holdvideo" src="video/hold.m4v" autoplay></video>
+              <div>
+                <h3>press and hold</h3>
+                <p>Pressing or squeezing a block for an extended period of time is reserved for any continuous change or long term action to the block. This can be used to record sound or video and cycle through colors.</p>
+              </div>
+            </div>
+
+            <div class="third">
+              <video id="shake" src="video/shake.mp4" autoplay loop></video>
+              <div>
+                <h3>shake</h3>
+                <p>Shaking a block removes the content stored on that block or resets the block to a default state.</p>
+              </div>
+            </div>
+
+
+            <div>
+              <div id="transfer">
+                <div id="transfervideos">
+                  <video id="transfercolor" src="video/transfercolor.m4v" autoplay></video>
+                  <video id="transferdisplay" src="video/transferdisplay.m4v" autoplay></video>
+                </div>
+                <div id="transfertext">
+                  <h3>inter-block relationships</h3>
+                  <p>Though interacting with individual blocks is interesting, creative possibilities and the building experience is enhanced when the user connects blocks together. Connecting two blocks together transfers content from one block to another, depending on the state of each block. For example, display blocks transfer and scale the image across multiple displays, as long as the displays share the same image.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id = "beyond">
+            <h2>going beyond sharing</h2>
+            <p> Buddy Blocks at its core facilities asynchronous communication, but that is only the beginning. These initial capabilities lay the foundation for synchronous communication and realtime collaborative building. </p>
+
+            <img src="images/buddyblocks/recipes.svg">
+            <div>
+              <h3>recipes</h3>
+              <p>Similar to how ingredients combined to yield to a flavorful dish, Recipes in Buddy Blocks are combinations of blocks that are special creations that unlock new features and expand the capabilities of Buddy Blocks. With Recipes, Buddy Blocks can facilitate synchronous communication. For example, building and sharing a telephone creation (see image on the left) would start a live conversation between two patients.</p>
+            </div>
+
+            <video src="video/buddybuild.mp4" autoplay loop></video>
+            <div>
+              <h3>buddy build</h3>
+              <p> Once in a live Buddy Build session, patients can collaboratively build creations. Patients can take turns adding blocks to the creation, each matching the previous form with their own blocks before build onto the creation. Patients go back and forth until they are satisfied with the creation they have made together.</p>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div id = "research">
+          <h2>research</h2>
+          <p>Prior to discovering the dialysis unit, the team did an in-depth literature review. The team explored how technology is currently incorporated into the patient care process, the difficulties pediatric patients and their families face, and the long term effects hospitalization has on pediatric patients. While exploring Seattle Children's Hospital, through a guided tour, the team identify the hemodialysis unit as a focused and unique area to explore. Further secondary research took place focused on hemodialysis patients and a collection of primary research activities took place to help the team identify challenges in this space and gain a better understanding.</p>
+
+          <div class = "researchmethod">
+            <img src="images/buddyblocks/expertinterviews.jpg">
+            <div>
+              <h3>expert interviews</h3>
+              <div class= "researchmethod_content">
+                <div id="team_stats">
+                  <div>
+                    <p class="number"> 3 </p>
+                    <p class="major">Experts</p>
+                  </div>
+                </div>
+
+                <p>The team interviewed three experts from fields related to the problem space. We interviewed a Professor from the UW who focuses on co-design with children, an Art Therapist at Seattle Children's, and the Director of the dialysis unit.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class = "researchmethod">
+            <img src="images/buddyblocks/flyonwall.jpg">
+            <div>
+              <h3>fly on the wall</h3>
+              <div class= "researchmethod_content">
+                <div id="team_stats">
+                  <div>
+                    <p class="number"> 3 </p>
+                    <p class="major">Observation Sessions</p>
+                  </div>
+                </div>
+                <p>To gain a foundational understanding of the unit we observed multiple treatment sessions. Team members observed individual patient experiences as well as, the unit overall.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class = "researchmethod">
+            <img src="images/buddyblocks/contextual.jpg">
+            <div>
+              <h3>contextual inquiry</h3>
+              <div class= "researchmethod_content">
+                <div id="team_stats">
+                  <div>
+                    <p class="number"> 4 </p>
+                    <p class="major">Dialysis Unit Staff Members</p>
+                  </div>
+                </div>
+                <p>We shadowed several Nurses and a Certified Nurse Assistant performing their normal routines to understand their roles, the treatment process, and how they interact with the patients.  The team asked clarifying questions when appropriate and the nurses were asked to "think-aloud" during the shadowing.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class = "researchmethod">
+            <img src="images/buddyblocks/draw.jpg">
+            <div>
+              <h3>draw and talk activity</h3>
+              <div class= "researchmethod_content">
+                <div id="team_stats">
+                  <div>
+                    <p class="number"> 4 </p>
+                    <p class="major">Patient Participants </p>
+                  </div>
+                </div>
+                <p>In order to accommodate a wide range of participants (ages 3-13), a flexible research activity was created to help the team meet research objectives while adapting to all patients.  Drawing was used as a way to help patients externalize thoughts, while being an activity to help the patients get comfortable with the team. Participants were also engaged in guided conversation, this included caregivers.</p>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <h2>key insights</h2>
+
+          <div id = "insight">
+            <div>
+              <h3>more than a treatment</h3>
+              <p>It quickly became clear that receiving hemodialysis is a lifestyle that affects not only the patient but also their family. It becomes entangled in multiple aspects of their life. This unveiled numerous opportunities for the team to explore. Such diet, patient education, and entertainment during treatment.</p>
+            </div>
+            <img src="images/buddyblocks/treatment.jpg">
+
+            <img src="images/buddyblocks/distraction.jpg">
+            <div>
+              <h3>beyond distraction</h3>
+              <p> We recognized that many of the different forms of entertainment were shallow distractions. Like playing games on their iPad or watching videos on Youtube. When talking with the patients we heard things like ‘You get tired of the iPad, after a while.’ or ‘I get bored sitting here, but its exciting when people come in to play’. We needed to move beyond these kinds of distractions and use the time in the unit toward developing a more enriching experience that involved bringing patients together.</p>
+            </div>
+
+            <div>
+              <h3>culture of containment</h3>
+              <p>Because of infection control and the nature of the treatment, patients are separated far apart in the room. These barriers restrict interactions between patients and  the activities they can do while on treatment. It was surprising to see that even patients would comment on these constraints.</p>
+            </div>
+            <img src="images/buddyblocks/culture.jpg">
+
+          </div>
+
+          <h3 class="quote">"We are like a family."</h3>
+          <p>Despite all these constraints and challenges, a strong community exists in the unit. Patients, parents, and nurses exchange greetings, give hugs, and play jokes on each other. However, these interactions between patients disappear during treatment. The team saw this as a perfect opportunity for a design intervention.</p>
+
+
+        </div>
+        <div id="documentation">
+          <i class="fa fa-file-pdf-o fa-3x"></i>
+          <a href="pdf/buddyblocks_research_report.pdf">View Research Readout</a>
+        </div>
+        <hr>
+        <div id = "ideation">
+          <h2>ideation</h2>
+          <p class = "callout"> How might we build upon the existing community to help patients interact with each other while receiving treatment? </p>
+
+          <p>This is only a small selection of ideas the team produced during the ideation process. The concepts shown here are those ideas that the team thought where promising and best addressed our "How might we..." statement as well as, our design principles. Storyboard, high-level systematic diagrams, and user flows were created to help communicate these ideas for critique. </p>
+
+          <div id="ideas">
+            <div class = "third" >
+              <img src="images/buddyblocks/pals.svg">
+              <h3>Hospital Pals</h3>
+              <p>Patients create a virtual imaginary friend that can travel throughout the hospital. Patients send their virtual friend to different locations around the hospital. Through projections and installed screens, the patient’s friend appears at these locations in the physical world. The patient can use there avatar to interact with other patients and hospital visitors.</p>
+            </div>
+            <div class = "third">
+              <img src="images/buddyblocks/cubes.svg">
+              <h3>Communication Cubes</h3>
+              <p>Each patient has their own set of cubes that can be combined together through magnets to form a messages. There are five types of cube: a sound cube, image cube, upload cube, camera cube, and light cubes. Messages are sent by placing creations on a transmission plate. Sent messages must be assembled by the recipients using their own cubes to receive the message.</p>
+            </div>
+            <div class = "third">
+              <img src="images/buddyblocks/spot.svg">
+              <h3>Spotlight</h3>
+              <p>A physical spotlight becomes a patient’s control in a hidden world within the unit. A patient's spotlight tracks where it is pointing in the unit and allows them to see virtual artifacts left on the walls of the unit. Patients create messages or images on their iPads and then place them in the space virtually using their spotlight. Hospital Staff can join in and leave hidden virtual artifacts in the space that multiple patients have to combine their spotlights together to see!</p>
+            </div>
+            <div class = "third">
+              <img src="images/buddyblocks/stories.svg">
+              <h3>Living Stories</h3>
+              <p>Patients act out stories using figurines by placing them on their open creation book. The book translates those figurines into a digital representation and the patient can customize the figures appearance and the background using the display in the book. Patients add audio or text to narrate the stories. Stories can be created individually or with other patients. Viewing the story can be done using the creation book or viewed on a personal device while in the unit, at home, or at school.</p>
+            </div>
+            <div class = "third">
+              <img src="images/buddyblocks/cans.svg">
+              <h3>Cans on a String</h3>
+              <p>Each patient has their own can that allows them to record, view, and share images, audio, or video. Patients can capture images and record audio outside the unit, but must be in the unit to share with other patients. Transmission of communication is visualized through light trails between chairs within the unit.</p>
+            </div>
+            <div class = "third">
+            </div>
+          </div>
+          <hr>
+          <h2>concept evaluation</h2>
+          <p>Several different methods were used to select the final concept. Concepts were evaluated based on their feasibility, desirability, and viability as well as, their ability to fulfill our core design principles that were born from our primary research.</p>
+
+          <div id = "principles">
+            <div class = "principle">
+              <h3>adaptable</h3>
+              <p>Designs should be able to adapt to each patient’s needs and abilities.</p>
+              </div>
+
+              <div class = "principle">
+                <h3>enriching</h3>
+                <p>Designs should allow the patient to grow. Whether it be intellectually, emotionally, or socially, it is important that the design be enriching for the patient and not a shallow distraction.</p>
+                </div>
+
+                <div class = "principle">
+                  <h3>enduring</h3>
+                  <p>Designs should be engaging for the patient
+                    throughout their entire dialysis experience. It should
+                    become a part of their routine.</p>
+                  </div>
+                  <div class = "principle">
+                    <h3>empowering</h3>
+                    <p>Designs should give patients control and a sense of ownership. Flexibility should be incorporated to allow patients the choice to manipulate and customize the design.</p>
+                  </div>
+                </div>
+                <p> Buddy Blocks (Communication Cubes at the time) was selected because it not only met the evaluation criteria but stood out from the other concepts. The concept is flexible and has a wide appeal. It appeals to the social butterfly, the shy builder, and the teen artist. It also fits into the diverse nature of the unit and reaches the wide age range of patients. Lastly, Buddy Blocks provides a familiar yet unique experience that provides new creative possibilities and brings patients normally separated together.</p>
+                <div class="threecolumn">
+                  <img class= "photosection_tile" src="images/buddyblocks/conceptevaluation_1.jpg">
+                  <img class= "photosection_tile" src="images/buddyblocks/conceptevaluation_2.jpg">
+                  <img class= "photosection_tile" src="images/buddyblocks/conceptevaluation_3.jpg">
+                </div>
+              </div>
+              <hr>
+              <div id = "prototype">
+
+                <h2>prototyping</h2>
+                <p>With Buddy Blocks selected, the team began crafting prototypes to evaluate and explore both the physical and digital aspects of the experience. Low to high-fidelity prototypes were created for both the blocks and iPad application.</p>
+                <div>
+                  <h3>creating the blocks</h3>
+                  <p>One of the most exciting aspects of Buddy Blocks was creating the novel block interface. This exploration incorporated a wide range of prototypes as the team explored different aspects of the blocks.</p>
+
+                  <div class= "photogrid">
+                    <div class= "photosection">
+                      <div class="photosection_column">
+                        <img class= "photosection_tile" src="images/buddyblocks/prototype1.jpg">
+                        <img class= "photosection_tile" src="images/buddyblocks/prototype2.jpg">
+                      </div>
+                      <div class="photosection_column">
+                        <img class= "photosection_tile" src="images/buddyblocks/prototype3.jpg">
+                        <img class= "photosection_tile" src="images/buddyblocks/prototype4.jpg">
+                      </div>
+                      <div class="photosection_column thin_column">
+                        <p class= "photosection_text"> Paper and foam core magnetic blocks were created to explore block size, to understand the magnetic properties and their impact on the interaction, and to evaluate the interactions users have with the blocks. </p>
+                      </div>
+                    </div>
+                    <div class= "photosection">
+                      <div  class="photosection_column thin_column">
+                        <p class= "photosection_text">Looking to demonstrate the final size and potential look of the blocks, 3D printing was used to create a small set of non-functional blocks that could be connected with internal magnets.</p>
+                      </div>
+                      <div class="photosection_column">
+                        <img class="photosection_tile"src="images/buddyblocks/prototype5.jpg">
+                        <img class="photosection_tile"src="images/buddyblocks/prototype8.jpg">
+                      </div>
+                      <div class="photosection_column">
+                        <img class="photosection_tile"src="images/buddyblocks/prototype6.jpg">
+                        <img class="photosection_tile"src="images/buddyblocks/prototype7.jpg">
+                      </div>
+                    </div>
+                    <video class="photosection_video" src="video/buildingwithprototype.mp4" autoplay loop></video>
+
+                    <div class= "photosection">
+                      <div class="photosection_column">
+                        <img class="photosection_tile"src="images/buddyblocks/prototype9.jpg">
+                        <img class="photosection_tile"src="images/buddyblocks/prototype11.jpg">
+                      </div>
+                      <div class="photosection_column">
+                        <img class="photosection_tile"src="images/buddyblocks/prototype10.jpg">
+                        <img class="photosection_tile"src="images/buddyblocks/prototype12.jpg">
+                      </div>
+                      <div class="photosection_column thin_column">
+                        <p class= "photosection_text"> To showcase the novel interactions, a more functional prototype was created to demonstrate the light block and how  light would be used as feedback for the other blocks. This functional prototype supported all the interactions (press, press and hold, and shake) and provided another hand-ons prototype to help communicate the concept to others.  </p>
+                      </div>
+
+                    </div>
+                    <video class="photosection_video" src="video/interactiveprototype.mp4" autoplay loop></video>
+                  </div>
+                </div>
+                <div>
+                  <h3>creating the application</h3>
+                  <p>When designing the mobile application for Buddy Blocks, the intention was to create a auxiliary experience that didn't consume attention, but was still playful and provided a platform for patients to easily share their creations.</p>
+
+                  <div class= "photosection">
+                    <div class="photosection_column">
+                      <img class="photosection_tile"src="images/buddyblocks/initialsketches.jpg">
+                    </div>
+                    <div class="photosection_column">
+                      <img class="photosection_tile"src="images/buddyblocks/onboardingsketches.jpg">
+
+                    </div>
+                    <div  class="photosection_column thin_column">
+                      <p class= "photosection_text"> Initial interface sketches were created exploring different layouts and application architectures. The on-boarding experience was also explored. Using these sketches, initial wireframes were created for evaluation.  </p>
+                    </div>
+                  </div>
+                  <img class="photosection_tile"src="images/buddyblocks/wireflow.png">
+                  <div class= "photosection">
+                    <div  class="photosection_column thin_column">
+                      <p class= "photosection_text"> After the evaluation was completed, the interface was changed to address usability concerns, interaction models were created, and the visual design system was created and applied to the wireframes. An interactive prototype was created, exploring some of the animated aspects of the interface and served as a click-through prototype for the application.</p>
+                    </div>
+                    <div class="photosection_column">
+                      <img class="photosection_tile"src="images/buddyblocks/interactionmodel-04.jpg">
+                    </div>
+                    <div class="photosection_column">
+                      <img class="photosection_tile"src="images/buddyblocks/interactionmodel-02.jpg">
+
+                    </div>
+                  </div>
+                  <video class="photosection_video" src="video/appprototype.mp4" autoplay loop></video>
+                </div>
+              </div>
+              <hr>
+              <div id = "evaluation">
+                <h2>evaluation</h2>
+                <h3>evaluating the blocks</h3>
+                <div class = "evaluation_stats">
+                  <div class ="stats">
+                    <div id="team_stats">
+                      <div>
+                        <p class="number"> 6 </p>
+                        <p class="major"> Participants </p>
+                      </div>
+                    </div>
+                    <hr>
+                    <div id="team_stats">
+                      <div>
+                        <p class="number"> 5 </p>
+                        <p class="major">Dialysis Patients - 7-16 years old </p>
+                      </div>
+                    </div>
+                    <div id="team_stats">
+                      <div>
+                        <p class="number"> 1 </p>
+                        <p class="major">Child – 3 years old </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="stats_description">
+                    <p>Using the magnetic foam core blocks, the objective of the evaluation was to explore the initial set of interactions. It was also used to identify any alternate actions that participants thought could achieve common tasks.</p>
+                    <img src="images/buddyblocks/foamblocks.jpg">
+                  </div>
+                </div>
+                <div id = "comicboarding">
+                  <img src="images/buddyblocks/comic.svg">
+                  <div>
+                    <h3>comic boarding</h3>
+                    <p>When evaluating the blocks with patients, we looked for a method that could quickly establish context due to the novelty of the interface. Comic boarding provided both a clear context and a way to incorporate moments for the prototype to be used by the participant to evaluate the prototype.</p>
+                    <br>
+                    <p>Comic boarding is commonly used to generate ideas, however, the team saw it as a great tool for evaluation. Comic boarding is a story or comic that has missing moments or panes that are filled in by the participant. The story didn't tell the participant how to interact with the blocks (the purpose of the evaluation), but rather gave a standard use case for the blocks.
+                    </p>
+                  </div>
+                </div>
+                <h3>evaluating the companion application</h3>
+
+                <div class = "evaluation_stats">
+                  <div class="stats">
+                    <div id="team_stats">
+                      <div>
+                        <p class="number"> 6 </p>
+                        <p class="major"> Participants </p>
+                      </div>
+                    </div>
+                    <hr>
+                    <div id="team_stats">
+                      <div>
+                        <p class="number"> 1 </p>
+                        <p class="major">Dialysis Patients - 7 years old </p>
+                      </div>
+                    </div>
+                    <div id="team_stats">
+                      <div>
+                        <p class="number"> 1 </p>
+                        <p class="major">Child - 3 years old </p>
+                      </div>
+                    </div>
+                    <div id="team_stats">
+                      <div>
+                        <p class="number"> 2 </p>
+                        <p class="major">Adults </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="stats_description">
+                    <p>Using paper interface mock-ups, the team evaluated the main user flow for the application. Specific interest was given to the build instructions for assembling creations. We wanted to compare three versions of the instruction. These multiple versions gave participants the opportunity to compare instruction types and provide more valuable feedback.</p>
+                    <img src="images/buddyblocks/paperprototype.png">
+                  </div>
+
+                </div>
+
+                <div id="documentation">
+                  <i class="fa fa-file-pdf-o fa-3x"></i>
+                  <a href="pdf/buddyblocks_evaluation_report.pdf">View Prototype Evaluation Readout</a>
+                </div>
+              </div>
+              <hr>
+              <div>
+                <h3 class="quote">Bringing kids together.</h3>
+                <div id="reflection">
+
+                  <div>
+                    <p>The culmination of this 6 month endeavor is showcased in both the Design Specification and the Product Video created for Buddy Blocks. Buddy Blocks was an amazing journey that showcases the power of the design process. Working collaboratively with not only fellow designers but also the doctors, nurses, and most importantly the patients and their families at Seattle Children's crafted a unique design that has exciting potential. This design not only responds to the initial challenge but has the potential to expand beyond its intended context. Buddy Blocks breaks down barriers, expands creativity, and brings kids together. </p>
+                    <div id="documentation">
+                      <i class="fa fa-file-pdf-o fa-3x"></i>
+                      <a href="pdf/buddyblocks_design_specification.pdf">View Design Specification</a>
+                    </div>
+                  </div>
+                  <iframe src="https://player.vimeo.com/video/235579514?title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                </div>
+              </div>
+
+              <hr>
+
+              <div id="team_tools">
+                <div id="team">
+                  <h2>team members</h2>
+                  <div id="team_stats">
+                    <div>
+                      <p class="number"> 3 </p>
+                      <p class="major">MHCI+D Students </p>
+                      <p>Brandon Caruso</p> <p> Michael Frampton</p> <p> Megan Wilson</p>
+                    </div>
+                  </div>
+                </div>
+                <div id="tools">
+                  <h2>tools</h2>
+                  <div>
+                    <p>Sketch</p> <p>Principle</p> <p>Adobe Creative Suite</p> <p>Arduino</p> <p>Soldering Tools</p> <p>Google SketchUp</p> <p>3D Printing</p> <p>Laser Cutting</p>
+                  </div>
+                </div>
+
+              </div>
+              <h2>you might also like</h2>
+              <div id = "related_projects">
+                <div onclick="window.location='mysteryplant.html';" class="related_project">
+                  <img src="images/mystery/mystery_2.jpg">
+                  <h1> mystery plant </h1>
+                  <p> pervasive mobile game concept </p>
+                  <a href = "mysteryplant.html">learn more <i class="fa fa-angle-right"></i></a>
+                </div>
+                <div onclick="window.location='louis.html';" class="related_project">
+                  <img src="images/louis/louis_2.jpg">
+                  <h1> louis </h1>
+                  <p> brallie keyboard prototype </p>
+                  <a href = "louis.html">learn more <i class="fa fa-angle-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+
+      </body>
+      <footer>
+        <p> &copy;2017 Brandon Caruso </p>
+      </footer>
+      <script>
+      document.getElementById('holdvideo').addEventListener('ended',resetVideoHold,false);
+      document.getElementById('transfercolor').addEventListener('ended',resetVideoColor,false);
+      document.getElementById('transferdisplay').addEventListener('ended',resetVideoDisplay,false);
+      document.getElementById('build').addEventListener('ended',resetVideoBuild,false);
+      function resetVideoHold(e) {
+        setTimeout(function(){
+          document.getElementById('holdvideo').play();
+        }, 5000);
+      };
+      function resetVideoColor(e) {
+        setTimeout(function(){
+          document.getElementById('transfercolor').play();
+        }, 5000);
+      };
+      function resetVideoDisplay(e) {
+        setTimeout(function(){
+          document.getElementById('transferdisplay').play();
+        }, 5000);
+      };
+      function resetVideoBuild(e) {
+        setTimeout(function(){
+          document.getElementById('build').play();
+        }, 2000);
+      };
+      </script>
+      </html>

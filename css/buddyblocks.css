@@ -1,0 +1,466 @@
+/* BUDDY BLOCKS*/
+p{
+  font-size: .9em;
+line-height: 2em;
+}
+
+#overview .copy{
+  width: 50%;
+}
+
+#overview .callout{
+  font-style: italic;
+  font-weight: 200;
+  font-size: 1.25em;
+  margin-bottom: 2em;
+  width: 100%;
+  align-self: center;
+  text-align: center;
+}
+
+#overview .copy {
+  width: 46%;
+}
+
+#compare{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: normal;
+  width: 46%;
+}
+#compare div{
+  width: 100%;
+  align-self: center;
+}
+#compare .price{
+  font-size: 3em;
+  font-weight: 600;
+}
+#compare p{
+  font-size: .75em;
+}
+#compare hr{
+  width: 10%;
+  margin: 2em 0;
+  border-top: 1px solid #333333;
+}
+
+#ideation .callout{
+  font-style: italic;
+  font-weight: 200;
+  font-size: 1.25em;
+  margin-bottom: 2em;
+  width: 100%;
+  align-self: center;
+  text-align: center;
+}
+
+p#childrenslogo{
+  width: 100%;
+}
+
+#childrenslogo{
+  text-align: center;
+  margin-top: 2em;
+}
+
+#childrenslogo p {
+  vertical-align: middle;
+}
+
+#overview #childrenslogo img{
+  width : 20%;
+  height: auto;
+  object-fit: contain;
+  text-align: center;
+  vertical-align: middle;
+  margin-bottom: 0;
+  margin-right: 2em;
+}
+
+#tui{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+}
+
+#flow{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+}
+
+div.researchmethod{
+  display: flex;
+  flex-direction: row;
+  margin: 7em 0;
+}
+
+div.researchmethod img{
+  width: 25%;
+}
+
+div.researchmethod #team_stats{
+  min-width:30%;
+}
+
+div.researchmethod_content>p{
+  line-height: 1.75em;
+  font-size: .8em;
+  padding-left: 2em;
+}
+
+.researchmethod_content{
+  display: flex;
+}
+
+
+div.researchmethod h3{
+  margin-bottom: 1em;
+  //border-bottom: solid .25px #333333
+}
+
+div.researchmethod>div{
+  margin: 1em 2em;
+}
+
+div.third{
+  width: 30%;
+  margin: 5em 0;
+}
+
+div.third video{
+  width: 100% !important;
+}
+div.third img{
+  width: 100%;
+}
+
+div.third h3{
+  font-size: 1.25em;
+  margin-bottom: 1em;
+}
+
+div.third p{
+  font-size: .8em;
+  line-height: 1.5em;
+}
+
+#ideas{
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+}
+
+#beyond{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 4em 0;
+}
+
+#beyond img{
+  width:40%;
+  margin: 2em;
+}
+
+#beyond video{
+  width:40%;
+  margin: 2em;
+}
+
+
+
+#beyond h3{
+  font-size: 2em;
+  margin-bottom: .5em;
+}
+
+#beyond div{
+  width : 50%;
+  align-self: center;
+}
+
+#beyond div p{
+  line-height: 1.75em;
+  font-size: .8em;
+}
+
+
+#insight{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 4em 0;
+}
+
+#insight img{
+  width:40%;
+  margin: 2em;
+}
+
+#insight video{
+  width:40%;
+  margin: 2em;
+}
+
+#insight h3{
+  font-size: 2em;
+  margin-bottom: .5em;
+}
+
+#insight div{
+  width : 50%;
+  align-self: center;
+}
+
+#insight div p{
+  line-height: 1.75em;
+  font-size: .8em;
+}
+
+#ideation p.callout{
+  width:75%;
+  margin: 2em auto;
+}
+
+h3.quote{
+  font-size: 2.5em;
+  font-weight: 100;
+  font-style: italic;
+  margin: 2em auto;
+  text-align: center;
+}
+
+#principles{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 3em 0;
+}
+
+.principle{
+width:40%;
+margin: 2em;
+}
+
+div.principle p{
+  line-height: 1.75em;
+  font-size: .8em;
+}
+div.principle h3{
+  line-height: 1.75em;
+}
+
+#transfer video{
+  width: 75%;
+}
+#transfer{
+  display:flex;
+}
+
+#transfer{
+  display:flex;
+}
+
+#transfertext{
+  align-self: center;
+}
+
+#transfertext p{
+  line-height: 1.75em;
+  font-size: .8em;
+}
+#transfertext h3{
+  line-height: 1.75em;
+}
+
+#transfervideos{
+  display:flex;
+  flex-direction: column;
+}
+
+
+#comicboarding{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 4em 0;
+}
+
+#comicboarding img{
+  width:40%;
+  margin: 2em;
+}
+
+.evaluation_stats{
+  display: flex;
+  flex-direction: row;
+  margin: 4em ;
+}
+.stats{
+  width:40%;
+}
+
+.stats_description{
+  width:50%;
+  margin: 2em;
+  display: flex;
+  flex-direction: column;
+}
+
+.stats_description img{
+  margin: 2em 0;
+}
+
+.evaluation_stats hr{
+  margin: 0 auto 3em 0;
+}
+.stats_description p{
+  line-height: 1.75em;
+  font-size: .8em;
+}
+
+#evaluation h3{
+  width: 100%;
+  font-size: 2em;
+  margin-bottom: .5em;
+}
+
+#comicboarding div{
+  width : 50%;
+  align-self: center;
+}
+
+
+#comicboarding div p{
+  line-height: 1.75em;
+  font-size: .8em;
+}
+
+#ideation p.callout{
+  width:75%;
+  margin: 2em auto;
+}
+
+#flow{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 4em 0;
+}
+
+#flow img{
+  width:40%;
+  margin: 2em;
+}
+
+#flow video{
+  width:40%;
+  margin: 2em;
+}
+
+#flow h3{
+  font-size: 2em;
+  margin-bottom: .5em;
+}
+
+#flow div{
+  width : 50%;
+  align-self: center;
+}
+
+#flow div p{
+  line-height: 1.75em;
+  font-size: .8em;
+}
+
+
+
+.threecolumn {
+  margin-top: 2em;
+  column-count: 3;
+  column-gap: 1.5em;
+}
+#prototype h3{
+  margin:1em 0;
+}
+
+#prototype>div{
+  margin-top:5em;
+}
+
+.photogrid{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.photosection{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+.photosection_column{
+  display: flex;
+  flex-direction: column;
+
+}
+.photosection_row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+.photosection_tile_row{
+  height: auto !important;
+  object-fit: contain;
+  padding-right: 1.5em;
+}
+
+.thin_column{
+  min-width: 20%;
+}
+
+.photosection_tile{
+  width:100% !important;
+  padding-bottom:1.5em;
+  height: auto !important;
+  object-fit: contain;
+}
+
+.photosection_text{
+  border-top: solid .25px #333333;
+  padding-top: 1em;
+}
+
+video.photosection_video{
+  width: 100% !important;
+}
+
+.photosection_column :last-child{
+  padding-bottom: 0 !important;
+}
+
+.photosection :nth-child(-n+2){
+  padding-right: 1.5em;
+}
+
+#reflection{
+  display: flex;
+}
+
+#reflection > div{
+  width: 60%;
+  margin-right: 2em;
+}
+
+#reflection > div > p{
+  margin-bottom: 2em;
+}
