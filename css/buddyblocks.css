@@ -383,10 +383,16 @@ div.principle h3{
 
 
 .threecolumn {
+  display:flex;
+  justify-content: space-between;
   width: 100%;
   margin-top: 2em;
-  column-count: 3;
 }
+
+.threecolumn img {
+  width: 32%;
+}
+
 #prototype h3{
   margin:1em 0;
 }
