@@ -137,6 +137,7 @@ div.third video{
 }
 div.third img{
   width: 100%;
+  height: auto;
 }
 
 div.third h3{
@@ -314,6 +315,7 @@ div.principle h3{
 
 .stats_description img{
   margin: 2em 0;
+  height: auto;
 }
 
 .evaluation_stats hr{
@@ -381,9 +383,9 @@ div.principle h3{
 
 
 .threecolumn {
+  width: 100%;
   margin-top: 2em;
   column-count: 3;
-  column-gap: 1.5em;
 }
 #prototype h3{
   margin:1em 0;
