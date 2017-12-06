@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8>
+  <title>Jack Frost</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:100,300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/base.css">
+  <link rel="stylesheet" type="text/css" href="css/slider.css">
+  <link rel="stylesheet" type="text/css" href="css/number.css">
+
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css"
+    rel="stylesheet"  type='text/css'>
+
+</head>
+<body>
+  <div id="flex">
+    <header>
+      <div>
+        <img src= "img/snowflake.svg">
+        <h1>Jack Frost</h1>
+      </div>
+      <!--<div>
+        <a onclick="toggleInfo()"><i class="fa fa-question-circle fa-2x" aria-hidden="true"></i></a>
+      </div>-->
+    </header>
+    <section>
+      <canvas id="preview"> </canvas>
+      <div id="controls">
+        <form id = "parameters">
+          <h2>Snowflake Controls</h2>
+          <div class = "formrow"> <img src= "img/parametericon-01.svg"> <input id="numSections" oninput="updateSnowflake()" onchange="updateSnowflake()"  type="range" min=4 max=12 value=8> </div>
+          <div class = "formrow"> <img src= "img/parametericon-02.svg"> <input id="maxBranches" oninput="updateMaxNumBranches();updateSnowflake();" onchange="updateMaxNumBranches();updateSnowflake();"  type="range" min=0 max=8 defaultValue=4> </div>
+          <div class = "formrow"> <img src= "img/parametericon-03.svg"> <input id="numBranches" oninput="updateSnowflake()" onchange="updateSnowflake()"type="range" min=0 max=4 value=1> </div>
+          <div class = "formrow"> <img src= "img/parametericon-04.svg"> <input id="branchAngle" oninput="updateSnowflake()" onchange="updateSnowflake()"type="range" min=0 max=180 step =1 value=45>  </div>
+          <div class = "formrow"> <img src= "img/parametericon-05.svg"> <input id="branchLength" type="range" oninput="updateSnowflake()" onchange="updateSnowflake()" min=0 max=4 step =.01 value=1.25> </div>
+        </form>
+        <div id = "advanced">
+          <a onclick="toggleAdvanced()"><i class="fa fa-cog fa-2x" aria-hidden="true"></i></a>
+          <form id = "advancedForm">
+            <label for="Radius">Radius: </label>
+            <input id="radius" oninput="updateSnowflake()" onchange="updateSnowflake()"  type="number" name="Radius" value=45 min=1 step=1>
+            <label for="Thickness">Thickness: </label>
+            <input id="thickness" oninput="updateSnowflake()" onchange="updateSnowflake()"  type="number" name="Thickness" value=3 min=1 step=.25>
+          </form>
+        </div>
+        <button onclick="saveFile()"><i class="fa fa-download" aria-hidden="true"></i> Download Snowflake</button>
+      </div>
+    </section>
+
+    <footer>
+    </footer>
+  </div>
+  <!--<div id="info">
+    <div id="infocontent">
+      <h1>What is Jack Frost?</h1>
+      <p> Jack Frost is a design tool that lets anyone create a 3D snowflake ornament model ready for 3D printing. <p>
+      <br>
+    <div>-->
+  </div>
+  <script src="js/three.js"></script>
+  <script src="js/STLExporter.js"></script>
+  <script src="js/FileSaver.js"></script>
+
+  <script>
+
+  var scene, preview,renderer,camera;
+  init();
+  animate();
+
+  function init(){
+
+    preview = document.getElementById('preview');
+    preview.width  = preview.clientWidth;
+    preview.height = preview.clientHeight;
+
+    // RENDERER
+    renderer = new THREE.WebGLRenderer({alpha: true, antialias: true, canvas: preview});
+    //renderer.setClearColor(0x000000);
+    renderer.setViewport(0, 0, preview.clientWidth, preview.clientHeight);
+
+    // CAMERA
+    camera = new THREE.PerspectiveCamera(35,  preview.clientWidth/ preview.clientHeight, .1, 3000);
+
+    // SCENE
+    scene = new THREE.Scene();
+
+
+    //LIGHTS
+    var light = new THREE.AmbientLight(0xffffff, 0.5);
+    scene.add(light);
+
+    var light2 = new THREE.PointLight(0xffffff, 0.5);
+    scene.add(light2);
+
+    scene.add(createSnowflake());
+  }
+
+  function animate() {
+    requestAnimationFrame( animate );
+    renderer.render( scene, camera );
+  }
+
+  function updateSnowflake(){
+    var currentSnowflake =  scene.getObjectByName("snowflake");
+    scene.remove(currentSnowflake);
+    var newSnowflake = createSnowflake();
+    scene.add(newSnowflake);
+  }
+
+  function createSnowflake() {
+    // GEOMETRY
+    var x = 0;
+    var y = 0;
+    var thickness = parseFloat(document.getElementById("thickness").value);
+    var radius = parseInt(document.getElementById("radius").value);
+    var branchLength = document.getElementById("branchLength").value;
+    var numSection = document.getElementById("numSections").value;
+    var maxNumBranches = document.getElementById("maxBranches").value;
+    var branchAngle = document.getElementById("branchAngle").value;
+    var numBranches = document.getElementById("numBranches").value;
+
+    var outerHookRadius = thickness+1;
+    var withHook = true;
+
+
+    var snowflake = new THREE.Group();
+    var snowflakeToExport;
+
+    var extrudeSettings = {amount: thickness, bevelEnabled: false};
+    var material = new THREE.MeshLambertMaterial({color:0xFFFFEE});
+
+    var flakeSection = new THREE.Group();
+    var stem = stemMesh(radius,thickness,extrudeSettings,material);
+
+
+    flakeSection.add(stem);
+
+    for(var b = 0; b<numBranches; b++){
+      var branch = branchMesh((radius/(maxNumBranches-b+1))*branchLength,
+                              (Math.PI/180 * branchAngle),
+                              thickness,
+                              extrudeSettings,
+                              material);
+      branch.translateY(y+radius*(1 - ((b+1)/maxNumBranches)));
+      flakeSection.add(branch);
+    }
+
+
+    for (var rotation = 0; rotation < numSection; rotation++){
+      var g = flakeSection.clone();
+      g.rotateZ(((2*(Math.PI))/numSection) * rotation);
+      snowflake.add(g);
+    }
+
+    // Add HOOK
+    if(withHook){
+      var hookShape = new THREE.Shape();
+  		hookShape.absarc( 0, 0, outerHookRadius, 0, Math.PI * 2, false );
+
+      var hookHolePath = new THREE.Path();
+  		hookHolePath.moveTo( 0, 0 );
+  		hookHolePath.absarc( 0, 0, outerHookRadius-thickness+.5, 0, Math.PI * 2, true );
+  		hookShape.holes.push( hookHolePath );
+
+      var hook = new THREE.Mesh(new THREE.ExtrudeGeometry(hookShape, extrudeSettings),material);
+      hook.translateY(radius+outerHookRadius);
+
+      snowflake.add(hook);
+    }
+    snowflake.translateZ(-200);
+    snowflake.name = "snowflake"
+
+   return snowflake
+  }
+
+  function stemMesh(r,thickness,extrudeSettings,material){
+    return new THREE.Mesh(drawRoundCapLine(r,thickness,extrudeSettings), material);
+  }
+
+  function drawRoundCapLine(r,thickness,extrudeSettings){
+    var shape = new THREE.Shape();
+    var thickOffset = thickness/2;
+    shape.moveTo(-thickOffset,0);
+    shape.lineTo(-thickOffset,r);
+    shape.arc(thickOffset, 0, thickOffset, 0,Math.PI*2, true);
+    shape.lineTo(thickOffset,0);
+    var geometry = new THREE.ExtrudeGeometry(shape, extrudeSettings);
+    return geometry;
+  }
+
+  function branchMesh(r,a,thickness, extrudeSettings,material){
+    var branch1 = drawRoundCapLine(r,thickness,extrudeSettings)
+    var branch2 = drawRoundCapLine(r,thickness,extrudeSettings)
+    var mesh1 = new THREE.Mesh(branch1, material);
+    var mesh2 = new THREE.Mesh(branch2, material);
+
+    mesh1.rotateZ(a);
+    mesh2.rotateZ(-a);
+
+    var g = new THREE.Group();
+    g.add(mesh1,mesh2);
+    return g;
+  }
+
+
+  function saveFile(){
+
+    saveSTL( scene, 'mySnowflake' );
+  }
+
+  document.getElementById('parameters').addEventListener('onchange', updateSnowflake());
+
+  function updateMaxNumBranches(){
+      var maxValue = document.getElementById("maxBranches").value;
+      document.getElementById("numBranches").setAttribute("max",maxValue-1);
+  }
+
+  function toggleAdvanced(){
+    var element = document.getElementById("advancedForm");
+    var parent = document.getElementById("advanced");
+
+    if (element.style.display === 'none') {
+      parent.style.justifyContent = "space-between";
+      element.style.display = "block";
+    }else{
+      parent.style.justifyContent="flex-end";
+      element.style.display = "none";
+    }
+  }
+
+  function toggleInfo(){
+    var element = document.getElementById("info");
+
+    if (element.style.display === 'none') {
+      element.style.display = "flex";
+    }else{
+      element.style.display = "none";
+    }
+  }
+  </script>
+</body>
+</html>

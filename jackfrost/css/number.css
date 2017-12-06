@@ -1,0 +1,9 @@
+input[type="number"]{
+  font-family:'Open Sans', sans-serif;
+  width: 4em;
+}
+
+label{
+	font-family:'Open Sans', sans-serif;
+	font-size:12px;
+}
