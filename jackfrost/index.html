@@ -71,16 +71,16 @@
   function init(){
 
     preview = document.getElementById('preview');
-    preview.width  = preview.clientWidth;
-    preview.height = preview.clientHeight;
+    preview.width  = preview.offsetWidth;
+    preview.height = preview.offsetHeight;
 
     // RENDERER
     renderer = new THREE.WebGLRenderer({alpha: true, antialias: true, canvas: preview});
     //renderer.setClearColor(0x000000);
-    renderer.setViewport(0, 0, preview.clientWidth, preview.clientHeight);
+    renderer.setViewport(0, 0, preview.width , preview.height);
 
     // CAMERA
-    camera = new THREE.PerspectiveCamera(35,  preview.clientWidth/ preview.clientHeight, .1, 3000);
+    camera = new THREE.PerspectiveCamera(35,  preview.width/preview.height, .1, 3000);
 
     // SCENE
     scene = new THREE.Scene();
@@ -238,6 +238,7 @@
       element.style.display = "none";
     }
   }
+
   </script>
 </body>
 </html>
