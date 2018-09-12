@@ -10,10 +10,10 @@
   <a href="#content"><section>
     <h1> National Comedy Center<br />
     <i class="fa fa-lg fa-universal-access"></i>  Accessibility Guide</h1>
-    <p> Large Print Text</p>
+    <!--<p> Large Print Text</p>-->
     <p> Text-to-Speech</p>
     <p> Audio Descriptions</p>
-    <p> Audio Transcripts</p>
+    <!--<p> Audio Transcripts</p>-->
     </section></a>
     <section id="content">
       <nav id="navigation">
@@ -54,7 +54,7 @@
 
         <h2>Text written by Dan Aykroyd</h2>
 
-        <p>This 1971 Harley Davidson Police Special motorcycle was ridden by me as my principal method of commuting from Ontario, Canada to Manhattan and back during the four years I worked on Saturday Night Live, from 1975-1979.</p>
+        <p>This 1971 Harley Davidson Police Special motorcycle was ridden by me as my principal method of commuting from Ontario, Canada to Manhattan and back during the four years I worked on <u>Saturday Night Live</u>, from 1975-1979.</p>
         <p>The bike was purchased originally by the Ontario Provincial Police where it was used as a component of their Golden Helmets twelve member precision drill riding team. While performing a pyramid display in Europe (where all the riders climb on the back of two teammates riding two motorcycles with one member standing atop the shoulders of the highest man) there was an accident, the pyramid collapsed, and a motor officer was killed.</p>
         <p>Twelve man pyramid motorcycle riding is dangerous.</p>
         <p>My FLH-P, 1200cc, Electra-Glide with solo seat was NOT the bike involved in the fatality, but it was part of the display formation.</p>
@@ -83,7 +83,7 @@
 
         <p class="ad">You have entered into an old electrical substation and trolley maintenance bay. The walls are exposed brick with chipped paint and the ceiling has the rafters and supports exposed. There is a large crane overhead with the mechanical gears of various sizes in view. A blinking arrow says "Comedy" and is pointing to the hallway entrance to the Hologram Theater. In front of you, a curved wall is playing a piece entitled "You Are Here".</p>
 
-      </article>-->
+      </article>
       <article id="holoway">
         <h1>Pre-Show Holoway</h1>
 
@@ -559,8 +559,12 @@
               </article>
             </section>
           </section>
-          <footer></footer>
-          <button onclick="toggleDarkMode();" onmouseover="toggle();"><i class="fa fa-3x fa-adjust"></i></button>
+          <footer>
+            <button onclick="stop()">STOP</button>
+            <button onclick="nextInQueue()">NEXT</button>
+          </footer>
+          <div id="nextZone" onclick="nextInQueue()" ondblclick="stop()"></div>
+          <button onclick="toggleDarkMode();" onmouseenter="toggle();"><i class="fa fa-3x fa-adjust"></i></button>
           <script src="http://code.responsivevoice.org/responsivevoice.js"></script>
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
           <script>
@@ -573,42 +577,107 @@
           <!--  <script src="scroll.js"></script>-->
         <script>
 
-          responsiveVoice.cancel();
-          responsiveVoice.speak("Hello and Welcome to the National Comedy Center! This accessibility guide is design to let you experience the story of comedy. You can listen to the various printed texts throughout the museum. Read the text in large print. Or read transcripts of audio only experiences.", "US English Male", {rate: 1, onend: ad} );
+          let audioQueue = new Array();
 
+          addToReadQueue("Hello and Welcome to the National Comedy Center! This accessibility guide is design to let you experience the story of comedy. You can listen to the various printed texts throughout the museum. Read the text in large print. Or read transcripts of audio only experiences.");
+          addToReadQueue("You may also turn on audio descriptions to hear about the pieces on display in our collection, or hear descriptions of the environment around you.","ad");
+          addToReadQueue("Tap to Begin");
 
-          function ad(){
-            responsiveVoice.speak("You may also turn on audio descriptions to hear about the pieces on display in our collection, or hear descriptions of the environment around you.", "US English Female", {rate: 1, onend: tap });
+          function addToReadQueue(text,type){
+            if(audioQueue.length == 0){
+              audioQueue.push({text:text,type:type});
+              readQueue();
+            }else{
+              console.log('Added to Queue.');
+              audioQueue.push({text:text,type:type});
+            }
           }
 
-          function tap(){
-              responsiveVoice.speak("Tap to Begin", "US English Male", {rate: 1} );
+          function addHighPriorityReadQueue(text,type){
+            if(audioQueue.length == 0){
+              audioQueue.unshift({text:text,type:type});
+              readQueue();
+            }else{
+              console.log('Added High Priority to Queue.');
+              audioQueue.unshift({text:text,type:type});
+              readQueue();
+            }
+          }
+
+          function readQueue(){
+            console.log(audioQueue);
+            if(audioQueue.length > 0){
+              audio = audioQueue[0];
+              if(audio.type == 'ad'){
+                responsiveVoice.speak(audio.text, "US English Female", {rate: 1, onend:nextInQueue});
+              }else{
+                responsiveVoice.speak(audio.text, "US English Male", {rate: 1, onend:nextInQueue});
+              }
+            }
+          }
+
+          function nextInQueue(){
+            audioQueue.shift();
+            readQueue();
           }
 
           function toggle(){
               responsiveVoice.speak("Invert Text and Background Color", "US English Male", {rate: 1} );
           }
 
-          $('li').on('mouseover', function (e) {
+          $('li').on('mouseenter', function (e) {
               console.log(e)
-              responsiveVoice.cancel();
+              clear();
+              text = e.target.innerText;
               if(e.target.className == 'transcript'){
-                responsiveVoice.speak(e.target.innerText + " Transcript", "US English Male", {rate: 1});
+                text += " Transcript"
+                addHighPriorityReadQueue(text);
               }else if(e.target.className == 'ad'){
-                  responsiveVoice.speak(e.target.innerText + " Audio Description", "US English Male", {rate: 1});
+                text += " Audio Description";
+                addHighPriorityReadQueue(text,'ad');
               }else{
-                responsiveVoice.speak(e.target.innerText, "US English Male", {rate: 1});
+                addHighPriorityReadQueue(text);
+              }
+
+          });
+
+          $('li').on('touchenter', function (e) {
+              console.log(e)
+              clear();
+              text = e.target.innerText;
+              if(e.target.className == 'transcript'){
+                text += " Transcript"
+                addHighPriorityReadQueue(text);
+              }else if(e.target.className == 'ad'){
+                text += " Audio Description";
+                addHighPriorityReadQueue(text,'ad');
+              }else{
+                addHighPriorityReadQueue(text);
               }
           });
 
           function read(section){
-            responsiveVoice.cancel();
-            responsiveVoice.speak($(section).text(), "US English Female", {rate: 1});
+            clear();
+            $(section).children().each(function(){addToReadQueue(this.innerText,this.className);});
+            //responsiveVoice.speak($(section).children().each(), "US English Female", {rate: 1});
           }
 
-          function readText(text){
-            responsiveVoice.speak(text, "US English Female", {rate: 1});
+          function stop(){
+            responsiveVoice.speak('Audio Stopped', 'US English Male', {rate: 1});
+            clear();
           }
+
+          function nextSection(){
+            responsiveVoice.speak('Audio Stopped', 'US English Male', {rate: 1});
+            clear();
+          }
+
+          function clear(){
+            console.log("Queue Cleared")
+            responsiveVoice.cancel();
+            audioQueue.length = 0;
+          }
+
         </script>
       </body>
       </html>
