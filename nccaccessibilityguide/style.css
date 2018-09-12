@@ -28,7 +28,7 @@ section h1{
 #content{
   display: flex;
   padding: 0;
-  height: calc(100vh - 50px);
+  height: calc(100vh);
 }
 
 article h1{
@@ -72,7 +72,7 @@ nav {
 }
 
 article {
-  min-height: calc(100vh - 50px);
+  min-height: calc(100vh);
   border-bottom: 1px solid #EEE;
 }
 
@@ -209,6 +209,32 @@ hr{
   }
 
   #articles {
+    width: 100%;
+    overflow-y: scroll;
+    height: 100%;
+    display: none;
+  }
+
+  #content{
+    flex-wrap: wrap;
+    flex-flow: wrap;
+  }
+
+  section h1 {
+    font-size: 200%	;
+  }
+
+}
+
+@media only screen and (max-height: 600px) {
+
+  nav {
+    width: 100%;
+    overflow-y: scroll;
+  }
+
+  #articles {
+    display: none;
     width: 100%;
     overflow-y: scroll;
     height: 100%;

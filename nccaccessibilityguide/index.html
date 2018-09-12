@@ -21,12 +21,14 @@
           <a href="#lobby" onclick="read('#lobby')"><li class="ad">Lobby <i class="fa fa-lg fa-audio-description"></i></li></a>
           <a href="#lobby_artifacts" onclick="read('#lobby_artifacts')" ><li>Artifacts</li></a>
           <a href="#entrance" onclick="read('#entrance')"><li class="ad">Museum Entrance <i class="fa fa-lg fa-audio-description"></i></li></a>
+          <a href="#artifacts" onclick="read('#artifacts')"><li>Artifacts</li></a>
           <a href="#holoway" onclick="read('#holoway')"><li>Pre-Show Holoway</li></a>
           <a href="#carlin" onclick="read('#carlin')"><li>George Carlin’s Stuff</li></a>
+          <a href="#entrance" onclick="read('#entrance')"><li class="ad">Stand-Up Lounge<i class="fa fa-lg fa-audio-description"></i></li></a>
           <a href="#late" onclick="read('#late')"><li>Late Night</li></a>
           <a href="#jokes" onclick="read('#jokes')"><li>Jokes With A View</li></a>
-          <a href="#jokes_audioscript" onclick="read('#jokes_audioscript')"><li class="transcript">Jokes With A View <i class="fa fa-lg fa-file-audio-o"></i></li></a>
-          <a href="#artifacts" onclick="read('#artifacts')"><li>Artifacts</li></a>
+
+        <!--  <a href="#jokes_audioscript" onclick="read('#jokes_audioscript')"><li class="transcript">Jokes With A View <i class="fa fa-lg fa-file-audio-o"></i></li></a>-->
         </ol>
       </nav>
       <section id="articles">
@@ -559,12 +561,12 @@
               </article>
             </section>
           </section>
-          <footer>
+          <!--<footer>
             <button onclick="stop()">STOP</button>
             <button onclick="nextInQueue()">NEXT</button>
-          </footer>
+          </footer>-->
           <div id="nextZone" onclick="nextInQueue()" ondblclick="stop()"></div>
-          <button onclick="toggleDarkMode();" onmouseenter="toggle();"><i class="fa fa-3x fa-adjust"></i></button>
+          <!--<button onclick="toggleDarkMode();" onmouseenter="toggle();"><i class="fa fa-3x fa-adjust"></i></button>-->
           <script src="http://code.responsivevoice.org/responsivevoice.js"></script>
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
           <script>
@@ -578,10 +580,10 @@
         <script>
 
           let audioQueue = new Array();
-
-          addToReadQueue("Hello and Welcome to the National Comedy Center! This accessibility guide is design to let you experience the story of comedy. You can listen to the various printed texts throughout the museum. Read the text in large print. Or read transcripts of audio only experiences.");
-          addToReadQueue("You may also turn on audio descriptions to hear about the pieces on display in our collection, or hear descriptions of the environment around you.","ad");
-          addToReadQueue("Tap to Begin");
+          //Read the text in large print. Or read transcripts of audio only experiences.
+          addToReadQueue("Hello and Welcome to the National Comedy Center! This accessibility guide is design to let you experience the story of comedy. You can listen to the various printed texts throughout the museum. ");
+          addToReadQueue("We also provide audio descriptions to hear descriptions of the environment around you.","ad");
+          addToReadQueue("Tap on the left to explore the different exhibits. Tap on the right side of the screen to skip forward.");
 
           function addToReadQueue(text,type){
             if(audioQueue.length == 0){
