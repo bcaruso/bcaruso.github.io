@@ -115,7 +115,7 @@ footer{
   bottom:0px;
 }
 
-#nextZone{
+#audioZone{
   width:50%;
   height:100vh;
   position:fixed;
@@ -124,8 +124,8 @@ footer{
   background-color: rgba(255,0,0,.25);
 }
 
-#pauseZone{
-  width:100%;
+#navZone{
+  width:50%;
   height:100vh;
   position:fixed;
   top:0;
@@ -224,6 +224,10 @@ hr{
     font-size: 200%	;
   }
 
+  li{
+    height: 100vh;
+  }
+
 }
 
 @media only screen and (max-height: 600px) {
@@ -231,6 +235,10 @@ hr{
   nav {
     width: 100%;
     overflow-y: scroll;
+  }
+
+  li{
+    height: 100vh;
   }
 
   #articles {

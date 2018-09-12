@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
   <title>National Comedy Center</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -18,15 +19,16 @@
     <section id="content">
       <nav id="navigation">
         <ol>
-          <a href="#lobby" onclick="read('#lobby')"><li class="ad">Lobby <i class="fa fa-lg fa-audio-description"></i></li></a>
-          <a href="#lobby_artifacts" onclick="read('#lobby_artifacts')" ><li>Artifacts</li></a>
-          <a href="#entrance" onclick="read('#entrance')"><li class="ad">Museum Entrance <i class="fa fa-lg fa-audio-description"></i></li></a>
-          <a href="#artifacts" onclick="read('#artifacts')"><li>Artifacts</li></a>
-          <a href="#holoway" onclick="read('#holoway')"><li>Pre-Show Holoway</li></a>
-          <a href="#carlin" onclick="read('#carlin')"><li>George Carlin’s Stuff</li></a>
-          <a href="#entrance" onclick="read('#entrance')"><li class="ad">Stand-Up Lounge<i class="fa fa-lg fa-audio-description"></i></li></a>
-          <a href="#late" onclick="read('#late')"><li>Late Night</li></a>
-          <a href="#jokes" onclick="read('#jokes')"><li>Jokes With A View</li></a>
+          <a href="#lobby" onclick="//read('#lobby')"><li class="ad">Lobby <i class="fa fa-lg fa-audio-description"></i></li></a>
+          <a href="#lobby_artifacts" onclick="//read('#lobby_artifacts')" ><li>Artifacts - Lobby Area</li></a>
+          <a href="#entrance" onclick="//read('#entrance')"><li class="ad">Museum Entrance <i class="fa fa-lg fa-audio-description"></i></li></a>
+          <a href="#artifacts" onclick="//read('#artifacts')"><li>Artifacts - Museum Entrance Area</li></a>
+          <a href="#holoway" onclick="//read('#holoway')"><li>Pre-Show Holoway</li></a>
+          <a href="#carlin" onclick="//read('#carlin')"><li>George Carlin’s Stuff</li></a>
+          <a href="#entrance" onclick="//read('#entrance')"><li class="ad">Stand-Up Lounge<i class="fa fa-lg fa-audio-description"></i></li></a>
+          <a href="#late" onclick="//read('#late')"><li>Late Night</li></a>
+          <a href="#jokes" onclick="//read('#jokes')"><li>Jokes With A View</li></a>
+          <a href="#entrance" onclick="//read('#entrance')"><li class="ad">Written and Drawn<i class="fa fa-lg fa-audio-description"></i></li></a>
 
         <!--  <a href="#jokes_audioscript" onclick="read('#jokes_audioscript')"><li class="transcript">Jokes With A View <i class="fa fa-lg fa-file-audio-o"></i></li></a>-->
         </ol>
@@ -89,7 +91,7 @@
       <article id="holoway">
         <h1>Pre-Show Holoway</h1>
 
-        <p class="ad"> At the entrance to the hallway, there is a large arrow with blinking lights and the word comedy pointing down the hallway. Moving down the hallaway to your right an audience in a dark and small comedy club is staring back at you. Around them are quotes from various comedians reading: </p>
+        <p class="ad"> At the entrance to the hallway, there is a large arrow with blinking lights and the word comedy pointing down the hallway. Moving down the hallway to your right an audience in a dark and small comedy club is staring at you. Around them are quotes from various comedians reading: </p>
 
         <p>“I like to close my eyes onstage, because I’ve drawn a picture of an audience enjoying the show more on the back of my eyelids.”</p>
 
@@ -154,6 +156,7 @@
         <p>Carlin left behind more than 50 boxes of paper material, photographs, and other memorabilia, as well as over 1,000 hours of rare audiovisual footage. Packed into steamer trunks, this extraordinary material came to light shortly after Carlin’s passing in 2008, when five storage units filled with the comedian’s “stuff” were inherited by his daughter, Kelly.</p>
 
         <p>The George Carlin Collection, acquired by the National Comedy Center in 2016, offers a unique and extraordinarily intimate window into the mind of one of comedy’s most prolific and influential figures. This exclusive glimpse into the collection has been designed to represent, as closely as possible, Carlin’s own extensive efforts to document his life and work.</p>
+
 
       </article>
       <article id="late">
@@ -565,7 +568,8 @@
             <button onclick="stop()">STOP</button>
             <button onclick="nextInQueue()">NEXT</button>
           </footer>-->
-          <div id="nextZone" onclick="nextInQueue()" ondblclick="stop()"></div>
+          <div id="navZone" onclick="nextInQueue()" ondblclick="stop()"></div>
+          <div id="audioZone" onclick="nextInQueue()" ondblclick="stop()"></div>
           <!--<button onclick="toggleDarkMode();" onmouseenter="toggle();"><i class="fa fa-3x fa-adjust"></i></button>-->
           <script src="http://code.responsivevoice.org/responsivevoice.js"></script>
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -577,109 +581,8 @@
           }
           </script>
           <!--  <script src="scroll.js"></script>-->
-        <script>
+        <script type="text/javascript" src="jquery.touchSwipe.min.js"></script>
+        <script src="audiocontrol.js"></script>
 
-          let audioQueue = new Array();
-          //Read the text in large print. Or read transcripts of audio only experiences.
-          addToReadQueue("Hello and Welcome to the National Comedy Center! This accessibility guide is design to let you experience the story of comedy. You can listen to the various printed texts throughout the museum. ");
-          addToReadQueue("We also provide audio descriptions to hear descriptions of the environment around you.","ad");
-          addToReadQueue("Tap on the left to explore the different exhibits. Tap on the right side of the screen to skip forward.");
-
-          function addToReadQueue(text,type){
-            if(audioQueue.length == 0){
-              audioQueue.push({text:text,type:type});
-              readQueue();
-            }else{
-              console.log('Added to Queue.');
-              audioQueue.push({text:text,type:type});
-            }
-          }
-
-          function addHighPriorityReadQueue(text,type){
-            if(audioQueue.length == 0){
-              audioQueue.unshift({text:text,type:type});
-              readQueue();
-            }else{
-              console.log('Added High Priority to Queue.');
-              audioQueue.unshift({text:text,type:type});
-              readQueue();
-            }
-          }
-
-          function readQueue(){
-            console.log(audioQueue);
-            if(audioQueue.length > 0){
-              audio = audioQueue[0];
-              if(audio.type == 'ad'){
-                responsiveVoice.speak(audio.text, "US English Female", {rate: 1, onend:nextInQueue});
-              }else{
-                responsiveVoice.speak(audio.text, "US English Male", {rate: 1, onend:nextInQueue});
-              }
-            }
-          }
-
-          function nextInQueue(){
-            audioQueue.shift();
-            readQueue();
-          }
-
-          function toggle(){
-              responsiveVoice.speak("Invert Text and Background Color", "US English Male", {rate: 1} );
-          }
-
-          $('li').on('mouseenter', function (e) {
-              console.log(e)
-              clear();
-              text = e.target.innerText;
-              if(e.target.className == 'transcript'){
-                text += " Transcript"
-                addHighPriorityReadQueue(text);
-              }else if(e.target.className == 'ad'){
-                text += " Audio Description";
-                addHighPriorityReadQueue(text,'ad');
-              }else{
-                addHighPriorityReadQueue(text);
-              }
-
-          });
-
-          $('li').on('touchenter', function (e) {
-              console.log(e)
-              clear();
-              text = e.target.innerText;
-              if(e.target.className == 'transcript'){
-                text += " Transcript"
-                addHighPriorityReadQueue(text);
-              }else if(e.target.className == 'ad'){
-                text += " Audio Description";
-                addHighPriorityReadQueue(text,'ad');
-              }else{
-                addHighPriorityReadQueue(text);
-              }
-          });
-
-          function read(section){
-            clear();
-            $(section).children().each(function(){addToReadQueue(this.innerText,this.className);});
-            //responsiveVoice.speak($(section).children().each(), "US English Female", {rate: 1});
-          }
-
-          function stop(){
-            responsiveVoice.speak('Audio Stopped', 'US English Male', {rate: 1});
-            clear();
-          }
-
-          function nextSection(){
-            responsiveVoice.speak('Audio Stopped', 'US English Male', {rate: 1});
-            clear();
-          }
-
-          function clear(){
-            console.log("Queue Cleared")
-            responsiveVoice.cancel();
-            audioQueue.length = 0;
-          }
-
-        </script>
       </body>
       </html>
