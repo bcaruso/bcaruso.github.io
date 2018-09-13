@@ -8,27 +8,35 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-  <a href="#content"><section>
+  <!--<a href="#content"><section>
     <h1> National Comedy Center<br />
-    <i class="fa fa-lg fa-universal-access"></i>  Accessibility Guide</h1>
+    <i class="fa fa-lg fa-universal-access"></i>  Accessibility Guide</h1>-->
     <!--<p> Large Print Text</p>-->
-    <p> Text-to-Speech</p>
-    <p> Audio Descriptions</p>
+    <!--<p> Text-to-Speech</p>-->
+    <!--<p> Audio Descriptions</p>-->
     <!--<p> Audio Transcripts</p>-->
-    </section></a>
+  <!--</section></a>-->
     <section id="content">
       <nav id="navigation">
         <ol>
+          <a href="#intro"><li><section>
+            <h1> National Comedy Center<br />
+            <i class="fa fa-lg fa-universal-access"></i>  Accessibility Guide</h1>
+            <!--<p> Large Print Text</p>-->
+            <p> Text-to-Speech</p>
+            <p> Audio Descriptions</p>
+            <!--<p> Audio Transcripts</p>-->
+          </section></li></a>
           <a href="#lobby" onclick="//read('#lobby')"><li class="ad">Lobby <i class="fa fa-lg fa-audio-description"></i></li></a>
           <a href="#lobby_artifacts" onclick="//read('#lobby_artifacts')" ><li>Artifacts - Lobby Area</li></a>
           <a href="#entrance" onclick="//read('#entrance')"><li class="ad">Museum Entrance <i class="fa fa-lg fa-audio-description"></i></li></a>
           <a href="#artifacts" onclick="//read('#artifacts')"><li>Artifacts - Museum Entrance Area</li></a>
           <a href="#holoway" onclick="//read('#holoway')"><li>Pre-Show Holoway</li></a>
           <a href="#carlin" onclick="//read('#carlin')"><li>George Carlin’s Stuff</li></a>
-          <a href="#entrance" onclick="//read('#entrance')"><li class="ad">Stand-Up Lounge<i class="fa fa-lg fa-audio-description"></i></li></a>
+          <a href="#standup" onclick="//read('#standup')"><li class="ad">Stand-Up Lounge<i class="fa fa-lg fa-audio-description"></i></li></a>
           <a href="#late" onclick="//read('#late')"><li>Late Night</li></a>
           <a href="#jokes" onclick="//read('#jokes')"><li>Jokes With A View</li></a>
-          <a href="#entrance" onclick="//read('#entrance')"><li class="ad">Written and Drawn<i class="fa fa-lg fa-audio-description"></i></li></a>
+          <a href="#written" onclick="//read('#entrance')"><li class="ad">Written and Drawn<i class="fa fa-lg fa-audio-description"></i></li></a>
 
         <!--  <a href="#jokes_audioscript" onclick="read('#jokes_audioscript')"><li class="transcript">Jokes With A View <i class="fa fa-lg fa-file-audio-o"></i></li></a>-->
         </ol>
@@ -568,8 +576,8 @@
             <button onclick="stop()">STOP</button>
             <button onclick="nextInQueue()">NEXT</button>
           </footer>-->
-          <div id="navZone" onclick="nextInQueue()" ondblclick="stop()"></div>
-          <div id="audioZone" onclick="nextInQueue()" ondblclick="stop()"></div>
+          <div id="navZone"></div>
+          <div id="audioZone"></div>
           <!--<button onclick="toggleDarkMode();" onmouseenter="toggle();"><i class="fa fa-3x fa-adjust"></i></button>-->
           <script src="http://code.responsivevoice.org/responsivevoice.js"></script>
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
