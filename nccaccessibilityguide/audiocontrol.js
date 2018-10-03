@@ -1,15 +1,9 @@
 let audioQueue = new Array();
 let currentSection = '#lobby';
+let readIndex = 0;
 let sectionIndex = 0;
 let sections = new Array();
-
-//Read the text in large print. Or read transcripts of audio only experiences.
-addToReadQueue("Hello and Welcome to the National Comedy Center! This accessibility guide is design to let you experience the story of comedy. You can listen to the various printed texts throughout the museum. ");
-addToReadQueue("We also provide audio descriptions to hear about the environment around you.","ad");
-addToReadQueue("Swipe up and down on the left side of the screen to explore the different exhibits.");
-addToReadQueue("When an exhibit is selected, to play the narration, tap on the left of the screen.");
-addToReadQueue("While the narration is playing you can skip ahead by, tapping on the right side of the screen.");
-addToReadQueue("Let's Get Laughing! Swipe up on the left side to the screen to begin.");
+let rate = 1;
 
 //Set Sections
 console.log($('nav ol').children().each(function(){ sections.push($(this).attr('href'))}));
@@ -18,51 +12,45 @@ currentSection = sections[sectionIndex];
 console.log(currentSection);
 console.log(sections);
 
-function addToReadQueue(text,type){
-  if(audioQueue.length == 0){
-    audioQueue.push({text:text,type:type});
-    readQueue();
-  }else{
-    console.log('Added to Queue.');
-    audioQueue.push({text:text,type:type});
-  }
-}
+//Read the text in large print. Or read transcripts of audio only experiences.
+addToReadQueue("Hello and Welcome to the National Comedy Center! This accessibility guide is design to let you experience the story of comedy. You can listen to the various printed texts throughout the museum. ");
+addToReadQueue("We also provide audio descriptions to hear about the environment around you.","ad");
+addToReadQueue("Swipe up and down on the screen to explore the different exhibits.");
+addToReadQueue("To listen to an exhibit double tap the screen.");
+addToReadQueue("While the narration is playing you can skip ahead by, swiping right to go forward and left to go back.");
+addToReadQueue("Let's Get Laughing! Swipe up to begin.");
+readQueue();
 
-function addHighPriorityReadQueue(text,type){
-  if(audioQueue.length == 0){
-    audioQueue.unshift({text:text,type:type});
-    readQueue();
-  }else{
-    console.log('Added High Priority to Queue.');
-    audioQueue.unshift({text:text,type:type});
-    readQueue();
-  }
+function addToReadQueue(text,type){
+  audioQueue.push({text:text,type:type});
 }
 
 function readQueue(){
   console.log(audioQueue);
-  if(audioQueue.length > 0){
-    audio = audioQueue[0];
+
+    audio = audioQueue[readIndex];
     if(audio.type == 'ad'){
-      responsiveVoice.speak(audio.text, "US English Female", {rate: 1, onend:nextInQueue});
+      responsiveVoice.speak(audio.text, "US English Female", {rate: rate, onend:forward});
     }else{
-      responsiveVoice.speak(audio.text, "US English Male", {rate: 1, onend:nextInQueue});
+      responsiveVoice.speak(audio.text, "US English Male", {rate: rate, onend:forward});
     }
-  }
+  /*}else{
+    //responsiveVoice.speak("End of Section", "US English Male", {rate: rate} );
+  }*/
 }
 
-function nextInQueue(){
-  audioQueue.shift();
-  if(audioQueue.length > 0){
+function forward(){
+  if(readIndex < audioQueue.length-1){
+    readIndex++
     readQueue();
-  }else{
-    //responsiveVoice.speak("End of Text", "US English Male", {rate: 1} );
-    clear();
   }
 }
 
-function toggle(){
-    responsiveVoice.speak("Invert Text and Background Color", "US English Male", {rate: 1} );
+function back(){
+  if(readIndex > 0){
+    readIndex--
+    readQueue();
+  }
 }
 
 function readLi(id){
@@ -71,12 +59,12 @@ function readLi(id){
     text = target.innerText;
     if(target.className == 'transcript'){
       text += " Transcript"
-      responsiveVoice.speak(text,"US English Male", {rate: 1});
+      responsiveVoice.speak(text,"US English Male", {rate: rate});
     }else if(target.className == 'ad'){
       text += " Audio Description";
-      responsiveVoice.speak(text,"US English Female", {rate: 1});
+      responsiveVoice.speak(text,"US English Female", {rate: rate});
     }else{
-      responsiveVoice.speak(text,"US English Male", {rate: 1});
+      responsiveVoice.speak(text,"US English Male", {rate: rate});
     }
 };
 
@@ -114,33 +102,30 @@ $('#navZone').swipe( {
             nextSection();
           }else if (direction === 'down'){
             previousSection();
+          }else if (direction === 'left'){
+            back();
+          }else if (direction === 'right'){
+            forward();
           }
-}});
-
-$('#navZone').swipe( {
-        //Generic swipe handler for all directions
-        tap:function(event, direction, distance, duration, fingerCount, fingerData) {
+        },tap: function(){},doubleTap:function(event, target) {
           read(currentSection);
-        }});
-
-$('#audioZone').swipe( {
-        //Generic swipe handler for all directions
-        tap:function(event, direction, distance, duration, fingerCount, fingerData) {nextInQueue();}});
-
-document.addEventListener("touchstart", function(){}, true);
+        }
+      });
 
 function read(section){
   clear();
   $(section).children().each(function(){addToReadQueue(this.innerText,this.className);});
+  readQueue();
 }
 
-function stop(){
-  responsiveVoice.speak('Audio Stopped', 'US English Male', {rate: 1});
+/*function stop(){
+  responsiveVoice.speak('Audio Stopped', 'US English Male', {rate: rate});
   clear();
-}
+}*/
 
 function clear(){
   console.log("Queue Cleared")
   responsiveVoice.cancel();
   audioQueue.length = 0;
+  readIndex = 0;
 }
