@@ -603,6 +603,9 @@ nav .buttons{
   <p>Looks like we are having a hard time saving your profile. Please try again later.</p>
   <button type="button" id="okBtn" onclick="closeAlert()">Okay</button>
 </div>
+<div id="hang" class="alert">
+  <h2>Hang tight while we create your profile...</h2>
+</div>
 </nav>
 
 <script>
@@ -698,6 +701,7 @@ function nextPrev(n) {
 
   // if you have reached the end of the form...
   if (currentTab == x.length-2) {
+    document.querySelector('#hang').style.display = 'flex';
     // ... the form gets submitted:
     let body = { "fname": $("input[name=fname]").val() ,
     "lname":$("input[name=lname]").val(),
@@ -714,8 +718,10 @@ function nextPrev(n) {
     $.postJSON("https://g71arsa641.execute-api.us-east-1.amazonaws.com/test/profile", body, function(result){
         if(!$.isEmptyObject(result)){
           console.log(result);
+          document.querySelector('#hang').style.display = 'none';
           document.querySelector('#oops').style.display = 'flex';
         }else{
+          document.querySelector('#hang').style.display = 'none';
           // Hide the current tab:
           x[currentTab].style.display = "none";
           // Increase or decrease the current tab by 1:
