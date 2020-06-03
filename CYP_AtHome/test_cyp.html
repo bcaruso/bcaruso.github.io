@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+  $( function() {
+    $( "#datepicker" ).datepicker(
+      {
+      showButtonPanel: true,
+      altField: "#date"
+    }
+    );
+  } );
+</script>
+<style>
+
+@font-face {
+    font-family: Sharp Grotesk Medium;
+    src: url(fonts/SharpGroteskMedium25.woff);
+}
+
+@font-face {
+    font-family: Sharp Grotesk SemiBold;
+    src: url(fonts/SharpGroteskSmBold18.woff);
+}
+
+@font-face {
+    font-family: Sharp Grotesk Book;
+    src: url(fonts/SharpGroteskBook18.woff);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background: #0a101d;
+  background: url('img/BG.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: #eee;
+  overflow: hidden;
+}
+
+#regForm {
+  font-family: Raleway;
+  padding: 40px;
+  width: 100%;
+  min-width: 300px;
+  align-self: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  overflow: scroll;
+}
+
+#intro{
+  width: 100%;
+  margin-top: 0;
+}
+
+#intro p{
+  width: 75%;
+  margin-top: 40px;
+}
+
+#intro button{
+  font-size: 22px;
+  padding: 10px 60px;
+  border-radius: 30px;
+  margin-top: 40px;
+}
+
+h1 {
+  font-family: Sharp Grotesk Medium, sans-serif;
+  font-size: 4.5rem;
+  color: #c9ff00;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0;
+  margin-bottom: .5rem;
+}
+
+h3 {
+  font-size: 2.5rem;
+  font-family: Sharp Grotesk SemiBold, sans-serif;
+  text-align: center;
+  margin: 0;
+  margin-bottom: .5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  font-family: Sharp Grotesk SemiBold, sans-serif;
+  text-align: center;
+  margin: 0;
+}
+
+p {
+  font-size: 1.25rem;
+  font-family: Sharp Grotesk Book, sans-serif;
+  text-align: center;
+  color: #ccc;
+  line-height: 2rem;
+}
+
+input {
+  padding: 10px;
+  width: 100%;
+  font-size: 24px;
+  font-family: Sharp Grotesk Book;
+  border: 1px solid #aaaaaa;
+}
+
+/* Mark input boxes that gets an error on validation: */
+input[type="text"].invalid {
+  border: 2px solid #ff4200 !important;
+}
+
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+
+.startBtn{
+  margin: auto;
+}
+
+button {
+  border-radius: 50px;
+  background-color: #c9ff00;
+  color: #000;
+  border: none;
+  padding: 10px 40px;
+  font-size: 18px;
+  font-family: Sharp Grotesk SemiBold, sans-serif;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+#prevBtn {
+  background-color: #bbbbbb;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 10px;
+  width: 10px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #c9ff00;
+}
+
+label {
+  cursor: pointer;
+}
+
+label:hover {
+  outline: 5px solid #c9ff00;
+
+}
+input[type="checkbox"]{
+  display: none;
+}
+input[type="checkbox"]:checked + label {
+  background: #c9ff00;
+}
+
+input[type="checkbox"]:checked + label p{
+  color: black;
+}
+
+input[type="radio"]{
+  display: none;
+}
+#radio-buttons  input[type="radio"]:checked + label {
+  background: #c9ff00;
+}
+
+input[type="radio"]:checked + label {
+  color: black;
+}
+
+input[type="text"]{
+  padding: 10px;
+  font-size: 24px;
+  font-family: Sharp Grotesk Book;
+  color:#eee;
+  border: 1px solid #aaaaaa;
+  background-color: rgba(10,16,29,.4);
+  border-radius: 48px;
+  padding-left: 24px !important;
+}
+
+input:focus, textarea:focus, select:focus{
+    border: 2px solid #c9ff00;
+    outline: none;
+}
+
+#radio-buttons label{
+  background: rgba(10,16,29,.4);
+  border: .25px solid #333;
+  font-family: Sharp Grotesk SemiBold, sans-serif;
+  font-size: 3em;
+  padding: 30px;
+  display:flex;
+  justify-content: center;
+  align-content: center;
+  width: 200px;
+  height: 200px;
+}
+
+div.thumbnails p{
+  display: none;
+}
+
+#personalities div.thumbnails p{
+  display: block;
+}
+
+#radio-buttons label span{
+  font-family: Sharp Grotesk Book, sans-serif;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+#radio-buttons{
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: center;
+}
+
+.thumbnails{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-bottom: 100px;
+  margin-top: 40px;
+}
+
+.alert{
+  display: none;
+  width:100vw;
+  height:100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(10,16,29,.92);
+  z-index: 100;
+}
+
+.name-input > label.error{
+  position: absolute;
+  transform: translateY(60px);
+}
+
+ label.error{
+  display: none;
+  background: none;
+  font-family: Sharp Grotesk Book, sans-serif;
+  color:#ff4200;
+  text-align: left;
+  padding: 0;
+  margin-top: 5px;
+  margin-left: 24px;
+  height: auto !important;
+}
+
+label.error:hover{
+  outline: none;
+  cursor: auto;
+}
+
+input[type="text"].invalid+label.error{
+  display: block;
+}
+
+label{
+  background: black;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  padding: 5px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+label p{
+  color: white;
+  font-family: Sharp Grotesk SemiBold, sans-serif;
+  margin: 10px !important;
+  text-align: left;
+}
+
+nav{
+  position: fixed;
+  display: flex;
+  bottom: 0;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: rgba(10,16,29,.3);
+}
+
+nav .buttons{
+  align-self: flex-end;
+}
+
+.text-only{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.name-input{
+  display: flex;
+  flex-direction: row;
+}
+
+.name-input input:first-child{
+  margin-right: 10px !important;
+}
+
+#datepicker{
+  display: flex;
+  justify-content: center;
+}
+
+#date{
+  border: 0;
+  outline: none;
+  background: none;
+  color: #eee;
+  text-align: center;
+}
+
+#personalities label img{
+  max-width: 200px;
+}
+
+#personalities label p{
+  font-size: 17px;
+  margin-bottom: 5px!important;
+}
+
+.alert button{
+  margin-top: 10px;
+}
+
+@media (max-width: 400px){
+  button{
+    padding: 10px 30px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 700px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2){
+
+  .text-only{
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 2em;
+    margin-bottom: .5em;
+  }
+
+  h3 {
+    font-size: 1.25em;
+    margin: 0;
+    margin-bottom: .5em;
+  }
+
+  h2 {
+    font-size: 1.25em;
+
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.75rem;
+  }
+
+  #intro p{
+    width: 100%;
+  }
+
+  .thumbnails{
+    flex-direction: column;
+  }
+
+  div.thumbnails p{
+    display: block;
+    align-self: center;
+  }
+
+  .name-input{
+    flex-direction: column;
+  }
+
+  .name-input input:first-child{
+    margin-right: 0px;
+    margin-bottom: 10px !important;
+  }
+
+  .name-input input.invalid:first-child{
+    margin-bottom: 45px !important;
+  }
+
+  label{
+    flex-direction: row;
+    height: 100px;
+    margin-right: 0;
+  }
+
+  #personalities label p{
+    font-size: 1.25rem;
+  }
+
+  #tv label{
+    flex-direction: row;
+    height: 150px;
+  }
+
+  #film label{
+    flex-direction: row;
+    height: 150px;
+  }
+
+  label img{
+    width: auto;
+    height: 100%;
+    display:block;
+  }
+
+  label p{
+    text-align: left;
+    padding-left: 10px;
+    width: 100%;
+  }
+
+  #regForm{
+    width: 100%;
+    padding: 20px;
+  }
+
+  nav .buttons{
+    align-self: center;
+    padding-bottom: 20px;
+  }
+
+  #radio-buttons{
+    display: flex;
+    flex-direction: column;
+  }
+
+  #radio-buttons label{
+    width: 100%;
+    align-items: center;
+  }
+}
+
+
+</style>
+</head>
+<body>
+
+<form id="regForm" action="">
+  <div id="intro" class="tab text-only">
+    <h1>Create Your Profile</h1>
+    <h3>Personalize your experience from anywhere.</h3>
+    <p>Let's get to know you and your sense of humor. This helps us customize your experience to your comedic tastes and will be attached to your LaughBand when you check-in at the National&nbsp;Comedy&nbsp;Center.</p>
+    <button type="button" id="startBtn" onclick="nextPrev(1)">Let's Go</button>
+  </div>
+
+  <div class="tab text-only">
+    <h2>On the next few screens, you can select the people and projects that you find hilarious!</h2>
+    <p>Pick as many as you want.</p>
+  </div>
+
+  <div id="personalities" class="tab">
+    <h2>Let's start with funny people: <br>stand-up comics, film stars, writers, and show hosts.</h2>
+    <p>Select the ones who make you laugh.</p>
+    <div class="thumbnails">
+    </div>
+  </div>
+
+  <div id="film" class="tab">
+    <h2>The big screen is all about larger-than-life laughs!</h2>
+    <p>Select the comedies that crack you up.</p>
+    <div class="thumbnails">
+    </div>
+  </div>
+
+  <div id="tv" class="tab">
+    <h2>Television shows represent a broad range of comedy genres.</h2>
+    <p>Select your favorite programs.</p>
+    <div class="thumbnails">
+    </div>
+  </div>
+
+  <div id="extra" class="tab">
+    <h2>Online or outside-the-box&mdash;there's always a fresh take on comedy.</h2>
+    <p>Select the projects you know and love.</p>
+    <div class="thumbnails">
+    </div>
+  </div>
+
+  <div class="tab text-only">
+    <h2>What a great sense&nbsp;of&nbsp;humor!</h2>
+    <p>There are just a few important questions that will help us know this is your sense of humor when you arrive.</p>
+  </div>
+
+  <div class="tab">
+    <h2>When will you be visiting the National&nbsp;Comedy&nbsp;Center?</h2>
+    <p><input oninput="this.className = ''" id="date" name="date" disabled> <div id="datepicker"></div></p>
+  </div>
+
+  <div class="tab">
+    <h2>What is your name?</h2>
+    <div class="name-input">
+      <input type="text" placeholder="First Name" oninput="this.className = ''; setName(this.value);" name="fname" id="fname"><label class="error" for="fname">Please input your first name.</label>
+      <input type="text" placeholder="Last Name" oninput="this.className = ''" name="lname">
+    </div>
+  </div>
+
+  <div class="tab">
+    <h2>Okay <name></name>, to access all the hilarious content you will create during your visit, please enter an email address.</h2>
+    <p>We will send you funny updates as well, you can cancel at anytime.</p>
+
+    <input type="text" placeholder="E-mail" oninput="this.className = ''" id="email" name="email">
+    <label class="error" for="email">Please input valid email.</label>
+  </div>
+  <div class="tab">
+    <h2>Comedy is for all ages!</h2>
+    <p>Let's get an idea of how old you are.</p>
+    <div id="radio-buttons">
+    <input type="radio" name="age" id="UNDER13" value="UNDER13" checked="checked"><label for="UNDER13"><span>Under</span> 13</label>
+    <input type="radio" name="age" id="13-17" value="13-17"><label for="13-17">13-17</label>
+    <input type="radio" name="age" id="18-25" value="18-25"><label for="18-25">18-25</label>
+    <input type="radio" name="age" id="26-35" value="26-35"><label for="26-35">26-35</label>
+    <input type="radio" name="age" id="36-45" value="36-45"><label for="36-45">36-45</label>
+    <input type="radio" name="age" id="46-55" value="46-55"><label for="46-55">46-55</label>
+    <input type="radio" name="age" id="56+" value="56+"><label for="56+">56+</label>
+    </div>
+  </div>
+  <div class="tab">
+    <h2>Where are you from?</h2>
+    <p>Please enter your zip code if you have one.</p>
+    <input type="text" placeholder="Zip Code" oninput="this.className = ''" name="zip">
+  </div>
+  <div class="tab text-only">
+    <h2>Your profile is complete!</h2>
+    <p>When you arrive at the National Comedy Center, provide the Admissions Team Member with your name. They will attach the sense of humor you just completed here to your LaughBand.</p>
+  </div>
+</form>
+<nav>
+<div class ="buttons" style="overflow:auto;">
+  <div style="float:right;">
+    <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+    <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+  </div>
+</div>
+<div class ="progress">
+</div>
+<div class="alert">
+  <h2>Please select at least one comedy favorite to continue.</h2>
+  <button type="button" id="okBtn" onclick="closeAlert()">Okay</button>
+</div>
+<div id="oops" class="alert">
+  <h2>Ooops. It's not you, it's us.</h2>
+  <p>Looks like we are having a hard time saving your profile. Please try again later.</p>
+  <button type="button" id="okBtn" onclick="closeAlert()">Okay</button>
+</div>
+</nav>
+
+<script>
+addSteps();
+var currentTab = 0; // Current tab is set to be the first tab (0)
+showTab(currentTab); // Display the current tab
+populateThumbnails();
+
+function setName(x){
+  document.querySelector('name').innerHTML = x;
+}
+
+function addSteps(){
+  let tabs = document.querySelectorAll('.tab');
+  for (i = 0; i < tabs.length-1; i++) {
+    document.querySelector('.progress').insertAdjacentHTML('beforeend', '<span class="step"></span>');
+  }
+}
+
+function closeAlert(){
+  document.querySelector('.alert').style.display = 'none';
+  document.querySelector('#oops').style.display = 'none';
+}
+
+let max = 500;
+
+function populateThumbnails(){
+
+  $.getJSON("https://g71arsa641.execute-api.us-east-1.amazonaws.com/test/config", function(result){
+    $.each(result.config, function(i, field){
+      let div_p = document.querySelector('#'+field.category+' div.thumbnails');
+      if($(div_p).children().length <= max){
+        div_p.insertAdjacentHTML('beforeend', '<input type="checkbox" value="'+field.key+'" name="'+field.category+'" id="'+field.key+'"><label for="'+field.key+'"><img src="'+field.url+'" alt="'+field.name+'"><p>'+field.name+'</p></label>');
+      }
+    });
+  });
+}
+
+function showTab(n) {
+  // This function will display the specified tab of the form...
+  var x = document.getElementsByClassName("tab");
+  /*x[n].style.display = "block";*/
+  if (x[n].classList.contains('text-only')) {
+      x[n].style.display = "flex";
+  }else{
+    x[n].style.display = "block";
+  }
+
+  //... and fix the Previous/Next buttons:
+  if (n <= 1) {
+    document.getElementById("prevBtn").style.display = "none";
+  } else {
+    document.getElementById("prevBtn").style.display = "inline";
+  }
+  if (n == 0) {
+    document.getElementById("nextBtn").style.display = "none";
+  } else if (n == (x.length - 2)) {
+    document.getElementById("nextBtn").innerHTML = "Done";
+  } else {
+    document.getElementById("nextBtn").style.display = "inline";
+    document.getElementById("nextBtn").innerHTML = "Next";
+  }
+
+  if (n == (x.length - 1)) {
+    document.getElementById("prevBtn").style.display = "none";
+    document.getElementById("nextBtn").style.display = "none";
+  }
+
+  //... and run a function that will display the correct step indicator:
+  fixStepIndicator(n)
+}
+
+$.postJSON = function(url, data, callback) {
+    return jQuery.ajax({
+    headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+    },
+    'type': 'POST',
+    'url': url,
+    'data': JSON.stringify(data),
+    'dataType': 'json',
+    'success': callback,
+    'error': function(){document.querySelector('#oops').style.display = 'flex';}
+    });
+};
+
+function nextPrev(n) {
+  // This function will figure out which tab to display
+  var x = document.getElementsByClassName("tab");
+  // Exit the function if any field in the current tab is invalid:
+  if (n == 1 && !validateForm()) return false;
+
+  // if you have reached the end of the form...
+  if (currentTab == x.length-2) {
+    // ... the form gets submitted:
+    let body = { "fname": $("input[name=fname]").val() ,
+    "lname":$("input[name=lname]").val(),
+    "email": $("input[name=email]").val(),
+    "age": $("input[type=radio][name=age]:checked" ).val(),
+    "zip": $("input[name=zip]").val(),
+    "arrival_date": adjustDateFormat($("input[name=date]").val()),
+    "personalities": getChecked("personalities"),
+    "tv":getChecked("tv"),
+    "film":getChecked("film"),
+    "extra":getChecked("extra")
+    };
+
+    $.postJSON("https://g71arsa641.execute-api.us-east-1.amazonaws.com/test/profile", body, function(result){
+        if(!$.isEmptyObject(result)){
+          console.log(result);
+          document.querySelector('#oops').style.display = 'flex';
+        }else{
+          // Hide the current tab:
+          x[currentTab].style.display = "none";
+          // Increase or decrease the current tab by 1:
+          currentTab = currentTab + 1;
+
+          // Otherwise, display the correct tab:
+          showTab(currentTab);
+        };
+    });
+
+  }
+
+  if (currentTab != x.length-2) {
+    // Hide the current tab:
+    x[currentTab].style.display = "none";
+    // Increase or decrease the current tab by 1:
+    currentTab = currentTab + n;
+
+    // Otherwise, display the correct tab:
+    showTab(currentTab);
+  }
+
+}
+
+function getChecked(category){
+  let checked = [];
+  $("input[type=checkbox][name="+category+"]:checked").each(function() {
+       checked.push($(this).val());
+  });
+  if(checked.length == 0){
+    return [""]
+  }else{
+    return checked;
+  }
+}
+
+function adjustDateFormat(date){
+  let pieces = date.split("/");
+  return pieces[2]+'-'+pieces[0]+'-'+pieces[1]
+}
+
+function validateForm() {
+  // This function deals with validation of the form fields
+  var x, y, i, valid = true;
+  x = document.getElementsByClassName("tab");
+  //y = x[currentTab].getElementsByTagName("input");
+  // A loop that checks every input field in the current tab:
+  /*for (i = 0; i < y.length; i++) {
+    // If a field is empty...
+
+    if (y[i].value == "") {
+      // add an "invalid" class to the field:
+      y[i].className += " invalid";
+      // and set the current valid status to false
+      valid = false;
+    }
+
+  }*/
+
+  if(currentTab == 5){
+    // We need to see if we have selected anything before moving forward.
+    let p,f,tv,extra,all,selected = false;
+    p = Array.from(x[2].getElementsByTagName("input"));
+    f = Array.from(x[3].getElementsByTagName("input"));
+    tv = Array.from(x[4].getElementsByTagName("input"));
+    extra = Array.from(x[5].getElementsByTagName("input"));
+    all = p.concat(f,tv,extra)
+
+    for (i = 0; i < all.length && !selected; i++) {
+      if (all[i].checked){
+        selected = true;
+      }
+    }
+    valid = selected;
+    if (!valid){
+      document.querySelector('.alert').style.display = 'flex';
+    }
+  }
+
+  if(currentTab == 8){
+    // Only First Name
+    y = x[currentTab].getElementsByTagName("input");
+    if (y[0].value == "") {
+      // add an "invalid" class to the field:
+      y[0].className += " invalid";
+      // and set the current valid status to false
+      valid = false;
+    }
+  }
+
+  if(currentTab == 9){
+    let regex = RegExp('.+\@.+\..+');
+    // Check Email
+    y = x[currentTab].getElementsByTagName("input");
+    if (y[0].value !== "") {
+      if(!regex.test(y[0].value)){
+        // add an "invalid" class to the field:
+        y[0].className += " invalid";
+        // and set the current valid status to false
+        valid = false;
+      }
+    }
+  }
+
+  // If the valid status is true, mark the step as finished and valid:
+  if (valid) {
+    document.getElementsByClassName("step")[currentTab].className += " finish";
+  }
+  return valid; // return the valid status
+}
+
+function fixStepIndicator(n) {
+  // This function removes the "active" class of all steps...
+  var i, x = document.getElementsByClassName("step");
+  for (i = 0; i < x.length; i++) {
+    x[i].className = x[i].className.replace(" active", "");
+  }
+  //... and adds the "active" class on the current step:
+  x[n].className += " active";
+}
+</script>
+
+</body>
+</html>
