@@ -654,6 +654,10 @@ function showTab(n) {
     x[n].style.display = "block";
   }
 
+  // Reset Scrolling 
+  x[n].scrollIntoView();
+  document.getElementById("regForm").scrollTop -= 40;
+
   //... and fix the Previous/Next buttons:
   if (n <= 1) {
     document.getElementById("prevBtn").style.display = "none";
