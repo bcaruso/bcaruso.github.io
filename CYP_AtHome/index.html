@@ -2,7 +2,6 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -135,7 +134,7 @@ input[type="text"].invalid {
   margin: auto;
 }
 
-button {
+button,a.cta {
   border-radius: 50px;
   background-color: #c9ff00;
   color: #000;
@@ -146,7 +145,7 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+button:hover, a.cta:hover {
   opacity: 0.8;
 }
 
@@ -206,6 +205,7 @@ input[type="radio"]:checked + label {
 }
 
 input[type="text"]{
+  margin-top: 25px;
   padding: 10px;
   font-size: 24px;
   font-family: Sharp Grotesk Book;
@@ -279,7 +279,7 @@ div.thumbnails p{
 
 .name-input > label.error{
   position: absolute;
-  transform: translateY(60px);
+  transform: translateY(85px);
 }
 
  label.error{
@@ -378,10 +378,42 @@ nav .buttons{
   margin-top: 10px;
 }
 
+/* Custom Calendar Styling */
+
+.ui-datepicker .ui-widget-content{
+
+}
+
+.ui-datepicker .ui-widget{
+  font-family: Sharp Grotesk Book ,sans-serif;
+  font-size: 1em;
+}
+
+.ui-datepicker{
+  width: 17em;
+  padding: .2em .2em 0;
+  display: none;
+}
+
+a.cta{
+  text-decoration: none;
+}
+
 @media (max-width: 400px){
-  button{
+  button, a.cta{
     padding: 10px 30px;
     font-size: 18px;
+  }
+}
+
+@media (max-width: 320px){
+  #intro p{
+    font-size:.75em;
+    line-height: 1.5em;
+    margin-top: 10px;
+  }
+  #intro button{
+    margin-top: 10px;
   }
 }
 
@@ -488,7 +520,33 @@ nav .buttons{
   #radio-buttons label{
     width: 100%;
     align-items: center;
+    height: 150px;
   }
+
+  #radio-buttons label:last-child{
+    margin-bottom: 150px;
+  }
+
+  #radio-buttons label span{
+    padding-right: .5em;
+  }
+
+}
+
+#regForm{
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+#regForm::-webkit-scrollbar {
+  width: 12px;
+}
+#regForm::-webkit-scrollbar-track {
+  background: none;
+}
+#regForm::-webkit-scrollbar-thumb {
+  background-color: #eee;
+  border-radius: 6px;
+  border: 1px solid #CFD8DC;
 }
 
 
@@ -583,6 +641,7 @@ nav .buttons{
   <div class="tab text-only">
     <h2>Your profile is complete!</h2>
     <p>When you arrive at the National Comedy Center, provide the Admissions Team Member with your name. They will attach the sense of humor you just completed here to your LaughBand.</p>
+    <a class="cta"href="https://comedycenter.org">Continue to Plan Your Visit</a>
   </div>
 </form>
 <nav>
@@ -654,7 +713,7 @@ function showTab(n) {
     x[n].style.display = "block";
   }
 
-  // Reset Scrolling 
+  // Reset Scrolling
   x[n].scrollIntoView();
   document.getElementById("regForm").scrollTop -= 40;
 
@@ -704,7 +763,7 @@ function nextPrev(n) {
   if (n == 1 && !validateForm()) return false;
 
   // if you have reached the end of the form...
-  if (currentTab == x.length-2) {
+  if (currentTab == x.length-2 && n>0) {
     document.querySelector('#hang').style.display = 'flex';
     // ... the form gets submitted:
     let body = { "fname": $("input[name=fname]").val() ,
@@ -738,12 +797,11 @@ function nextPrev(n) {
 
   }
 
-  if (currentTab != x.length-2) {
+  if (currentTab != x.length-2 || n<0) {
     // Hide the current tab:
     x[currentTab].style.display = "none";
     // Increase or decrease the current tab by 1:
     currentTab = currentTab + n;
-
     // Otherwise, display the correct tab:
     showTab(currentTab);
   }
