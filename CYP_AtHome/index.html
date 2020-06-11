@@ -49,6 +49,7 @@ body {
   background-size: cover;
   color: #eee;
   overflow: hidden;
+  margin: 0;
 }
 
 #regForm {
@@ -399,6 +400,23 @@ a.cta{
   text-decoration: none;
 }
 
+#regForm{
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+#regForm::-webkit-scrollbar {
+  width: 12px;
+}
+#regForm::-webkit-scrollbar-track {
+  background: none;
+}
+#regForm::-webkit-scrollbar-thumb {
+  background-color: #eee;
+  border-radius: 6px;
+  border: 1px solid #CFD8DC;
+}
+
+
 @media (max-width: 400px){
   button, a.cta{
     padding: 10px 30px;
@@ -531,24 +549,19 @@ a.cta{
     padding-right: .5em;
   }
 
-}
+  #regForm::-webkit-scrollbar-thumb {
+    all:unset;
+  }
 
-#regForm{
-  overflow-y: auto;
-  overflow-x: hidden;
-}
-#regForm::-webkit-scrollbar {
-  width: 12px;
-}
-#regForm::-webkit-scrollbar-track {
-  background: none;
-}
-#regForm::-webkit-scrollbar-thumb {
-  background-color: #eee;
-  border-radius: 6px;
-  border: 1px solid #CFD8DC;
-}
+  #regForm::-webkit-scrollbar {
+    all:unset;
+    width: 0px;
+  }
 
+  #regForm::-webkit-scrollbar-track {
+    all:unset;
+  }
+}
 
 </style>
 </head>
