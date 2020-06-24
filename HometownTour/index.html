@@ -60,7 +60,7 @@
     <button id="back" name="go" onclick="backStop()">
       <i class="fas fa-chevron-left"></i>
     </button>
-    <input id="stopNumber" name="stopNumber" value="1" type="text" onchange="gotoStop()"></input>
+    <input id="stopNumber" inputmode="numeric" pattern="[0-9]*" name="stopNumber" value="1" type="text" onchange="gotoStop()"></input>
     <button id="next"  onclick="addStop()">
       <i class="fas fa-chevron-right"></i>
     </button>
