@@ -159,6 +159,9 @@ input[type="text"]{
   -moz-border-radius: 0px !important;
   -webkit-border-radius: 0px !important;
   border-radius: 0px !important;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
 button{
