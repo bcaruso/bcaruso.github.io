@@ -38,7 +38,7 @@ p{
   align-items: center;
   position: fixed;
   z-index: 999;
-  padding: 50px;
+  padding: 50px 25px;
   padding-top: 25px;
   border-radius: 5px;
   max-width: 300px;
