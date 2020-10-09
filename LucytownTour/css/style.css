@@ -18,8 +18,75 @@ p{
   color: #fff;
 }
 
-section{
+#disclaimer{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 999;
+  background-color: rgba(255,255,255,.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+#disclaimer div{
+  background-color: rgba(240,98,58,.9);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  z-index: 999;
+  padding: 50px;
+  padding-top: 25px;
+  border-radius: 5px;
+  max-width: 300px;
+  -webkit-box-shadow: 0 4px 16px 0 rgba(0,0,0,.3);
+  box-shadow: 0 4px 16px 0 rgba(0,0,0,.3);
+  transition: all .5s;
+  box-sizing: border-box;
+}
+
+#disclaimer div:active{
+  transform: scale(.9);
+}
+
+#disclaimer a{
+  font-family: Roboto;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#disclaimer h2{
+  margin-bottom: 0;
+}
+
+#disclaimer i{
+  padding-right: .5em;
+}
+
+#support{
   padding-top:55px;
+  background-color: rgba(249, 180, 107,0.5);
+}
+
+#support h3{
+  text-align: left;
+}
+
+#support > div{
+  max-width: 720px;
+  padding: 0px 25px;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+section{
+  max-width: 720px;
+  margin: 0 auto;
 }
 
 article{
@@ -61,6 +128,12 @@ article{
   width: 200px;
   margin-bottom: -31px;
   margin-left: -20px;
+}
+
+@media only screen and (max-width: 320px){
+  #splash>h1>img{
+    width: 150px;
+  }
 }
 #splash h1{
   font-weight: 500;
@@ -298,6 +371,10 @@ div.directions h3{
   font-size: .9em;
 }
 
+div.directions i{
+      padding-right: .5em;
+}
+
 .private{
   font-family: Roboto;
   width: 60%;
@@ -331,6 +408,12 @@ div.directions h3{
 span.caption{
   text-transform: none;
   font-size: 1.25em !important;
+}
+
+.fadeOut{
+  animation-name: fadeOut;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
 }
 
 @keyframes fadeOut {
