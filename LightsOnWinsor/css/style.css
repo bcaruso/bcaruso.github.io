@@ -1,0 +1,150 @@
+html,body{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  overflow-x: hidden;
+  overflow-y: scroll;
+  font-family: sans-serif;
+}
+.background{
+  position: absolute;
+  top:-50px;
+  left:0;
+  width: 100%;
+  z-index: -10;
+}
+
+.header{
+  height: 75px;
+  margin: 25px;
+  display: flex;
+  justify-content: center;
+}
+.header img{
+  height: 100%;
+}
+.vid{
+  margin: 0 auto;
+  width: 50%;
+  min-width: 310px;
+}
+
+.vid-container {
+	position: relative;
+	padding-bottom: 52%;
+	padding-top: 30px;
+	height: 0;
+  border-radius: 5px;
+  border: 10px solid rgb(159,117,65);
+  background: rgb(159,117,65,.5);
+  box-shadow: 0px 0px 2px #888;
+}
+
+.vid-container iframe,
+.vid-container object,
+.vid-container embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.vid-list-container {
+	max-width: 92%;
+	overflow: hidden;
+	margin-top: 0px;
+	margin-left: 4%;
+	padding-bottom: 0px;
+}
+
+.vid-list {
+  width: 2520px;
+	position: relative;
+	top:0;
+	left: 0;
+}
+
+.vid-item {
+	display: block;
+	width: 148px;
+	height: 148px;
+	float: left;
+	margin: 0;
+	padding: 10px;
+}
+
+.thumb {
+	overflow:hidden;
+	height: 84px;
+  cursor: pointer;
+}
+
+.thumb img {
+	width: 100%;
+	position: relative;
+	top: -13px;
+}
+
+.vid-item .desc {
+	color: rgb(159,117,65);
+	font-size: 12px;
+	margin-top:5px;
+  font-weight: bold;
+}
+
+.arrows {
+	position:relative;
+	width: 100%;
+}
+
+.arrow-left {
+	color: #fff;
+	position: absolute;
+	background: rgb(159,117,65);
+	left: -25px;
+	top: -130px;
+	z-index: 99;
+	cursor: pointer;
+  display: inline-block;
+  box-shadow: 0px 0px 2px #888;
+  padding: .5em .55em;
+  border-radius: 2px;
+}
+
+.arrow-right {
+	color: #fff;
+	position: absolute;
+	background: rgb(159,117,65);
+	right: -25px;
+	top: -130px;
+	z-index:100;
+	cursor: pointer;
+  display: inline-block;
+  box-shadow: 0px 0px 2px #888;
+  padding: .5em .55em;
+  border-radius: 2px;
+}
+
+@media (max-width: 624px) {
+	.arrows {
+		position:relative;
+		margin: 0 auto;
+		width:96px;
+	}
+	.arrow-left {
+		left: 0;
+		top: -20px;
+	}
+
+	.arrow-right {
+		right: 0;
+		top: -20px;
+	}
+}
