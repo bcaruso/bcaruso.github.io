@@ -132,16 +132,16 @@ class Button {
 function preload() {
   img = loadImage('assets/img/SevenDirty@0.5x.png');
   font = loadFont('assets/fonts/SharpGroteskSmBold18.otf');
-}
-
-function setup() {
-  createCanvas(windowWidth, windowHeight);
-  button = new Button(windowWidth/2, windowHeight/2, windowHeight*.4);
   for(let i = 1; i < 82; i++){
     audio = new Howl({src:['assets/sevendirty/8A-01_632_0'+i+'_DirtyWords.wav'], html5: true, onload: function(){loading++}})
     audio.text_word = file_words[i-1];
     words.push(audio);
   }
+}
+
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  button = new Button(windowWidth/2, windowHeight/2, windowHeight*.4);
   shuffle(words, true);
 }
 
