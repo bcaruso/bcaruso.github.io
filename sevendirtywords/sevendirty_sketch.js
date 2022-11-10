@@ -164,13 +164,13 @@ function mouseReleased(){
 
 function draw() {
     clear();
-    if(loading != file_words.length-1){
+    /*if(loading != file_words.length-1){
       drawLoadingWords();
-    }else{
+    }else{*/
       drawWaves();
       drawWords();
       button.draw();
-    }
+    /*}*/
 }
 
 function windowResized() {
